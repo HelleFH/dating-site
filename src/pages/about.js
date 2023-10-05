@@ -1,19 +1,45 @@
+import React, { useEffect, useState } from 'react';
 
-import { useLocation } from 'react-router-dom';
+function UserProfile() {
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const [profilePhoto, setProfilePhoto] = useState('');
 
-// ...
+  useEffect(() => {
+    // Retrieve the user's country from local storage
+    const country = localStorage.getItem('selectedCountry');
 
-function AnotherPage() {
-  const location = useLocation();
-  const formData = location.state.formData;
-  const profilePhoto = location.state.profilePhoto;
-  const selectedInterests = location.state.selectedInterests;
-  const selectedCountry = location.state.selectedCountry;
+    // Check if the country exists in local storage
+    if (country) {
+      setSelectedCountry(country);
+    }
+  }, []);
 
-  // Access and display the form data as needed
-  console.log(formData, profilePhoto, selectedInterests, selectedCountry);
+  useEffect(() => {
+    // Retrieve the user's profile photo from local storage
+    const photo = localStorage.getItem('profilePhoto');
 
-  // Render the data as needed
+    // Check if the photo exists in local storage
+    if (photo) {
+      setProfilePhoto(photo);
+    }
+  }, []);
+
+  return (
+    <div>
+      <h1>Welcome, {selectedCountry || 'Guest'}!</h1>
+      {selectedCountry ? (
+        <p>Your country is: {selectedCountry}</p>
+      ) : (
+        <p>Please set your country in the settings.</p>
+      )}
+
+      {profilePhoto ? (
+        <img src={profilePhoto} alt="Profile Preview" />
+      ) : (
+        <p>No profile photo available</p>
+      )}
+    </div>
+  );
 }
 
-export default AnotherPage;
+export default UserProfile;
