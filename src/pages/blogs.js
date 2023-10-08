@@ -1,20 +1,51 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function ProfileCreationForm() {
   const navigate = useNavigate();
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [selectedInterests, setSelectedInterests] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(localStorage.getItem('selectedCountry') || '');
+  const [selectedInterests, setSelectedInterests] = useState(JSON.parse(localStorage.getItem('selectedInterests')) || []);
   const [errors, setErrors] = useState({});
   const [fullName, setFullName] = useState(''); // Use fullName state directly
   const [email, setEmail] = useState(''); // Use fullName state directly
   const interestOptions = ['Interest 1', 'Interest 2', 'Interest 3', 'Interest 4'];
 
 
+  
+
 
   // Add more form fields as needed
 
   const [profilePhoto, setProfilePhoto] = useState(null);
+
+  useEffect(() => {
+    // Check if form data exists in local storage
+    const storedCountry = localStorage.getItem('selectedCountry');
+    const storedFullName = localStorage.getItem('fullName');
+    const storedEmail = localStorage.getItem('email');
+    const storedPhoto = localStorage.getItem('profilePhoto');
+
+    if (storedCountry) {
+      // Set the retrieved data to your state
+      setSelectedCountry(storedCountry);
+    }
+  
+    if (storedFullName) {
+      // Set the retrieved data to your state
+      setFullName(storedFullName);
+    }
+  
+    if (storedEmail) {
+      // Set the retrieved data to your state
+      setEmail(storedEmail);
+    }
+    if (storedPhoto) {
+      // Set the retrieved data to your state
+      setProfilePhoto(storedPhoto);
+    }
+  }, []);
+  
+
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
@@ -44,8 +75,11 @@ function ProfileCreationForm() {
   };
 
   const handleCountryChange = (event) => {
-    setSelectedCountry(event.target.value);
-    localStorage.setItem('selectedCountry', event.target.value);
+    const selectedCountry = event.target.value;
+    setSelectedCountry(selectedCountry);
+  
+    // Store selected country as a string
+    localStorage.setItem('selectedCountry', selectedCountry);
   };
 
   const handleNameChange = (event) => {
