@@ -4,35 +4,15 @@ import { faX, faStar, faHeart } from '@fortawesome/free-solid-svg-icons';
 import TinderCard from "../react-tinder-card/index";
 import Profiles from "../data/profiles.json";
 
-const db = [
-  {
-    name: "Richard Hendricks",
-    url: "./img/richard.jpg",
-  },
-  {
-    name: "Erlich Bachman",
-    url: "./img/erlich.jpg",
-  },
-  {
-    name: "Monica Hall",
-    url: "./img/monica.jpg",
-  },
-  {
-    name: "Jared Dunn",
-    url: "./img/jared.jpg",
-  },
-  {
-    name: "Dinesh Chugtai",
-    url: "./img/dinesh.jpg",
-  },
-];
-
 const alreadyRemoved = [];
 let charactersState = Profiles;
 
 function Contact() {
   const [characters, setCharacters] = useState(Profiles);
   const [lastDirection, setLastDirection] = useState();
+  const [swipedRightProfiles, setSwipedRightProfiles] = useState(
+    JSON.parse(localStorage.getItem('swipedRightProfiles')) || []
+  );
 
   const childRefs = useMemo(
     () =>
@@ -41,25 +21,29 @@ function Contact() {
         .map((i) => React.createRef()),
     []
   );
-  
-  const swipedRightProfiles = JSON.parse(localStorage.getItem('swipedRightProfiles')) || [];
 
   const swiped = (direction, nameToDelete) => {
     console.log("removing: " + nameToDelete);
     setLastDirection(direction);
     alreadyRemoved.push(nameToDelete);
-  
+
     if (direction === 'right') {
-      // Check if the profile is already in the array
-      const swipedProfile = characters.find((character) => character.name === nameToDelete);
-      const isProfileAlreadySwiped = swipedRightProfiles.some((profile) => profile.name === nameToDelete);
-  
-      if (swipedProfile && !isProfileAlreadySwiped) {
-        swipedRightProfiles.push(swipedProfile);
-        localStorage.setItem('swipedRightProfiles', JSON.stringify(swipedRightProfiles));
+      // Check if the profile has already been swiped in this swipe action
+      if (!swipedRightProfiles.some((profile) => profile.name === nameToDelete)) {
+        // Save the profile data to local storage with a unique key
+        const swipedProfile = characters.find((character) => character.name === nameToDelete);
+        if (swipedProfile) {
+          // Use a unique key, e.g., 'swipedRightProfile_Name'
+          const key = `swipedRightProfile_${swipedProfile.name}`;
+          localStorage.setItem(key, JSON.stringify(swipedProfile));
+          // Update the swipedRightProfiles array
+          setSwipedRightProfiles([...swipedRightProfiles, swipedProfile]);
+        }
       }
     }
   };
+
+
   
 
   const outOfFrame = (name) => {
@@ -69,7 +53,6 @@ function Contact() {
     );
     setCharacters(charactersState);
   };
-
 
   const swipe = (dir) => {
     const cardsLeft = characters.filter(
@@ -81,11 +64,8 @@ function Contact() {
       alreadyRemoved.push(toBeRemoved);
       childRefs[index].current.swipe(dir);
     }
-    
-    // Save all swiped profiles to local storage
-    const swipedProfiles = characters.filter((character) => alreadyRemoved.includes(character.name));
-    localStorage.setItem('swipedRightProfiles', JSON.stringify(swipedProfiles));
   };
+
   return (
     <div>
       <link
@@ -111,7 +91,7 @@ function Contact() {
             onSwipe={(direction) => {
               if (direction === 'right') {
                 // Save the profile data to localStorage
-                localStorage.setItem('swipedRightProfiles', JSON.stringify(character));
+                localStorage.setItem('swipedRightProfile', JSON.stringify(character));
               }
               swiped(direction, character.name);
             }}
