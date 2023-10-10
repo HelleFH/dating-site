@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav, NavLink, NavMenu }
     from "./NavbarElements";
- 
+
 const Navbar = () => {
     return (
         <>
@@ -10,16 +10,24 @@ const Navbar = () => {
                     <NavLink to="/about" activeStyle>
                         About
                     </NavLink>
-                    <NavLink to="/contact" activeStyle>
-                        Contact Us
+                    <NavLink to="/findmatches" activeStyle>
+                        Find matches
                     </NavLink>
-                    <NavLink to="/blogs" activeStyle>
-                        Blogs
+                    <NavLink to="/profile" activeStyle>
+                        Profile
+                    </NavLink>
+                    <NavLink to="/favorites" activeStyle>
+                        Favorites
                     </NavLink>
                     <NavLink to="/sign-up" activeStyle>
                         Sign Up
                     </NavLink>
+                    <NavLink>FaBars</NavLink>
                 </NavMenu>
+                <button>
+                <faBars /> {/* Render the Bars component */}
+
+                </button>
             </Nav>
         </>
     );

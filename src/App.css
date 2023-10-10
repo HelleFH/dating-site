@@ -1,57 +1,112 @@
+@import url("https://use.typekit.net/vul5gtv.css");
+
 #root {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
   overflow: hidden;
   /* background: linear-gradient(#fff, #999); */
-  background: linear-gradient(#e66465, #9198e5);
+
 }
 
-#root > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+* {
+  margin: 0;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 1em;
 
-.app > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .row {
   flex-direction: row !important;
 }
 
-.row > * {
+.row>* {
   margin: 5px;
 }
 
-h1 {
-  font-family: "Damion", cursive;
-  color: #fff;
-  text-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  display: block;
 }
 
-h2 {
-  color: #fff;
+.signup-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
 }
+
+.signup-page-image {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.signup-page-image img {
+  z-index: 1;
+  position: relative;
+}
+
+.signup-page-content {
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 9999;
+}
+
+.signup-page .overlay {
+  background-color: #e66465;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+}
+
+.signup-page form {
+  z-index: 9999;
+  position: absolute;
+  width: 90%;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form label {
+  min-width: 40%;
+  display: flex;
+}
+
+.signup-form div {
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-form input {
+  min-width: 60%;
+}
+
+.signup-page-form {
+  display: flex;
+  justify-content: center;
+}
+
 
 .swipe {
   position: absolute;
 }
 
 .cardContainer {
-  width: 90vw;
   max-width: 260px;
   height: 300px;
 }
 
+.form-fields div {display:flex; flex-direction: row;margin-bottom:1em;}
+.form-fields label {min-width:150px;}
 .card {
   position: relative;
   background-color: #fff;
@@ -63,25 +118,40 @@ h2 {
   background-size: cover;
   background-position: center;
 }
-.card img {max-width:260px; border-radius: 15px;}
+
+.card img {
+  max-width: 260px;
+  border-radius: 15px;
+}
 
 .cardContent {
   width: 100%;
   height: 100%;
 }
 
-.swipe:last-of-type {
+.swipe:last-of-type {}
+
+.card div {
+  align-items: center;
+  display: flex;
 }
-.card div {align-items: center; display: flex;
+
+.card button {
+  position: absolute;
 }
-.card button {position: absolute;}
-.card p, .card h3, .card div {
+
+.card p,
+.card h3,
+.card div {
   position: absolute;
   bottom: 0;
   margin: 10px;
   color: #fff;
 }
-.card p {margin-left:5em;}
+
+.card p {
+  margin-left: 5em;
+}
 
 .infoText {
   width: 100%;
@@ -111,32 +181,68 @@ h2 {
   font-weight: bolder;
   width: 160px;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+
 }
 
-.buttons button:hover {
-  transform: scale(1.05);
+
+
+.selected {
+  background-color: #3498db;
+  /* Change the background color to your preference */
+  color: #fff;
+  /* Change the text color to your preference */
+  font-weight: bold;
+  /* Add other styles as needed */
 }
 
 @keyframes popup {
   0% {
     transform: scale(1, 1);
   }
+
   10% {
     transform: scale(1.1, 1.1);
   }
+
   30% {
     transform: scale(0.9, 0.9);
   }
+
   50% {
     transform: scale(1, 1);
   }
+
   57% {
     transform: scale(1, 1);
   }
+
   64% {
     transform: scale(1, 1);
   }
+
   100% {
     transform: scale(1, 1);
   }
+}
+
+.interest-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0.5em;
+  position: relative;
+}
+
+.interest-buttons button {
+  transition: width 0.3s ease;
+  /* Add transition for smooth expansion */
+  
+  height: 20px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+button:hover {
+  transform: scale(1.05);
 }

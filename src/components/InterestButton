@@ -1,0 +1,16 @@
+// InterestButton.js
+import React from 'react';
+
+function InterestButton({ label, selected, onClick }) {
+  return (
+    <button
+      type="button"
+      className={`interest-button ${selected ? 'selected' : ''}`}
+      onClick={onClick}
+    >
+      {label}
+    </button>
+  );
+}
+
+export default InterestButton;

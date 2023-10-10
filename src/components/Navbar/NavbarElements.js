@@ -9,6 +9,9 @@ export const Nav = styled.nav`
   justify-content: space-between;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 `;
  
 export const NavLink = styled(Link)`
@@ -21,6 +24,7 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   &.active {
     color: #4d4dff;
+
   }
 `;
  

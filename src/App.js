@@ -5,12 +5,11 @@ import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
 import Home from './pages';
 import About from './pages/about';
-import Blogs from './pages/blogs';
+import ProfilePage from './pages/profile';
 import SignUp from './pages/signup';
-import Contact from './pages/contact';
-import { styles } from './pages/blogs'; // Update the import path
-const styleElement = document.createElement('style');
-styleElement.innerHTML = styles;
+import Favorites from './pages/favorites';
+
+import Contact from './pages/FindMatches';
 document.head.appendChild(styleElement);
  
 function App() {
@@ -19,8 +18,10 @@ function App() {
             <Navbar />
             <Routes>
                 <Route path='/about' element={<About />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/blogs' element={<Blogs />} />
+                <Route path='/findmatches' element={<Contact />} />
+                <Route path='/profile' element={<ProfilePage />} />
+                <Route path='/favorites' element={<Favorites />} />
+
                 <Route path='/sign-up' element={<SignUp />} />
             </Routes>
         </Router>
