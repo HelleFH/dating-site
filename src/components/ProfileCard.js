@@ -1,4 +1,10 @@
-// ProfileCard.js
+const uniqueSmokingHabits = ["All", ...new Set(swipedRight.map(profile => profile.smoking_habits))];
+const uniqueAlcoholHabits = ["All", ...new Set(swipedRight.map(profile => profile.alcohol_habits))];
+const uniqueZodiacSigns = ["All", ...new Set(swipedRight.map(profile => profile.zodiac_sign))];// ProfileCard.js
+
+
+
+
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX, faStar, faHeart } from '@fortawesome/free-solid-svg-icons';

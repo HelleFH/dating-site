@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { FaUser, FaBriefcase, FaBirthdayCake, FaUserPolice, FaPhone, FaMapMarker, FaEnvelope, FaChild, FaSmoking, FaGraduationCap, FaWineGlass, FaStar, FaListUl, FaBaby } from 'react-icons/fa'; // Import Font Awesome icons
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function UserProfile() {
   const [profileData, setProfileData] = useState({
@@ -16,6 +18,8 @@ function UserProfile() {
     selectedInterests: [],
     profilePhoto: '',
     birthday: '',
+    description: '',
+    profession:'',
   });
 
   useEffect(() => {
@@ -29,61 +33,99 @@ function UserProfile() {
   }, []);
 
   return (
-    <div>
+    <div className='view-profile'>
       {profileData.firstName && (
         <h1>Welcome, {profileData.firstName}!</h1>
       )}
 
-      <div>
+      <div className='contact-info'>
+        {profileData.profilePhoto && (
+          <img src={profileData.profilePhoto} alt="Profile Preview" />
+        )}
         <h2>Your contact information</h2>
         {profileData.email && (
-          <p>Email: {profileData.email}</p>
+          <p>
+          <span>  <FaEnvelope /> Email: </span><span>{profileData.email}</span>
+          </p>
         )}
         {profileData.phone && (
-          <p>Phone: {profileData.phone}</p>
+          <p>
+           <span> <FaPhone /> Phone: </span><span>{profileData.phone}</span>
+          </p>
         )}
         {profileData.postcode && (
-          <p>Postcode: {profileData.postcode}</p>
+          <p>
+            <span><FaMapMarker /> Postcode:</span><span>{profileData.postcode}</span> 
+          </p>
         )}
         {profileData.city && (
-          <p>City: {profileData.city}</p>
+          <p>
+       <span>    <FaMapMarker /> City:</span> <span>{profileData.city}</span> 
+          </p>
         )}
       </div>
 
-      {profileData.selectedChildren && (
-        <p>Your children are: {profileData.selectedChildren}</p>
-      )}
+      <div class="user-info">
+        <h2>Additional information</h2>
+        {profileData.description && (
+          <p><span>Profile text:</span><span>{profileData.description}</span></p>
+        )}
+        {profileData.selectedChildren && (
+          <p>
+        <span>    <FaBaby /> Children: </span><span>{profileData.selectedChildren}</span>
+          </p>
+        )}
+          {profileData.profession && (
+          <p>
+            <span><FaBriefcase /> Job:</span> <span>{profileData.profession}</span>
+          </p>
+        )}
 
-      {profileData.selectedSmoking && (
-        <p>Smoking habits: {profileData.selectedSmoking}</p>
-      )}
+        {profileData.selectedSmoking && (
+          <p>
+          <span> <FaSmoking /> Smoking: </span> <span>{profileData.selectedSmoking}</span>
+          </p>
+        )}
 
-      {profileData.selectedEducation && (
-        <p>Education level: {profileData.selectedEducation}</p>
-      )}
+        {profileData.selectedEducation && (
+          <p>
+            <span><FaGraduationCap /> Education:</span> <span>{profileData.selectedEducation}</span>
+          </p>
+        )}
 
-      {profileData.selectedAlcohol && (
-        <p>Alcohol habits: {profileData.selectedAlcohol}</p>
-      )}
+        {profileData.selectedAlcohol && (
+          <p>
+           <span> <FaWineGlass /> Alcohol:</span> <span>{profileData.selectedAlcohol}</span>
+          </p>
+        )}
 
-      {profileData.selectedZodiac && (
-        <p>Zodiac sign: {profileData.selectedZodiac}</p>
-      )}
+        {profileData.selectedZodiac && (
+          <p>
+           <span> <FaStar /> Zodiac:</span> <span>{profileData.selectedZodiac}</span>
+          </p>
+        )}
 
-{profileData.selectedInterests && profileData.selectedInterests.length > 0 && (
-  <div>
-    <p>Your Interests:</p>
-    <ul>
-      {profileData.selectedInterests.map((interest, index) => (
-        <li key={index}>{interest}</li>
-      ))}
-    </ul>
-  </div>
-)}
-
-      {profileData.profilePhoto && (
-        <img src={profileData.profilePhoto} alt="Profile Preview" />
-      )}
+        {profileData.selectedInterests && profileData.selectedInterests.length > 0 && (
+          <div>
+            <p>
+              <FaListUl />Interests:
+            </p>
+            <ul>
+              {profileData.selectedInterests.map((interest, index) => (
+                <li key={index}>{interest}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+      <div className="buttons">
+        <Link to="/profile">
+          <button>Edit</button>
+        </Link>
+        <Link to="/findMatches">
+          <button>Find Matches!</button>
+        </Link>
+      </div>
     </div>
   );
 }

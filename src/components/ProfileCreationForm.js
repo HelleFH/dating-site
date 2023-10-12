@@ -6,6 +6,8 @@ function ProfileCreationForm() {
   const navigate = useNavigate();
 
   // State variables for form data
+  const [selectedLookingFor, setSelectedLookingFor] = useState('');
+
   const [selectedChildren, setSelectedChildren] = useState('');
   const [selectedZodiac, setSelectedZodiac] = useState('');
   const [selectedAlcohol, setSelectedAlcohol] = useState('');
@@ -20,7 +22,9 @@ function ProfileCreationForm() {
   const [profilePhoto, setProfilePhoto] = useState(null);
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [birthdate, setBirthdate] = useState('');
-  const [profession, setProfession] = useState('');
+  const [occupation, setOccupation] = useState('');
+  const [description, setDescription] = useState('');
+
 
 
 
@@ -33,6 +37,7 @@ function ProfileCreationForm() {
   useEffect(() => {
     // Check local storage for form data and update state variables
     setSelectedChildren(formData.selectedChildren || '');
+    setSelectedLookingFor(formData.selectedLookingFor|| '');
     setSelectedZodiac(formData.selectedZodiac || '');
     setSelectedAlcohol(formData.selectedAlcohol || '');
     setSelectedSmoking(formData.selectedSmoking || '');
@@ -42,7 +47,7 @@ function ProfileCreationForm() {
     setEmail(formData.email || '');
     setBirthdate(formData.birthdate || '');
 
-    setBirthdate(formData.birthdate || '');
+    setDescription(formData.description || ''); 
 
 
     setPhone(formData.phone || '');
@@ -107,6 +112,7 @@ function ProfileCreationForm() {
         selectedSmoking,
         selectedInterests,
         selectedEducation,
+        selectedLookingFor,
 
         firstName,
         lastName,
@@ -116,7 +122,9 @@ function ProfileCreationForm() {
         city,
         profilePhoto,
         birthdate,
-        profession,
+        occupation,
+        description,
+
       };
 
       // Save the entire formData object to localStorage under "UserInfo"
@@ -130,9 +138,31 @@ function ProfileCreationForm() {
     }
   };
 
+
   const interestOptions = [
-    // Your list of interest options here
+    'Photography',
+    'Traveling',
+    'Fitness and training',
+    'Yoga',
+    'Music',
+    'Arts and crafts',
+    'Literature',
+    'Cooking',
+    'Painting',
+    'Animals',
+    'Fashion and design',
+    'Volunteering and charity work',
+    'Hiking and outdoor activities',
+    'Astrology',
+    'Technology',
+    'Programming',
+    'Psychology',
+    'Marketing',
+    'Data science',
+    'Fashion design',
+    'Environmental science',
   ];
+
 
   return (
     <div>
@@ -144,7 +174,8 @@ function ProfileCreationForm() {
         phone={phone}
         postcode={postcode}
         city={city}
-        profession={profession}
+        occupation={occupation}
+        description={description}
 
         selectedChildren={selectedChildren}
         selectedInterests={selectedInterests}
@@ -152,6 +183,8 @@ function ProfileCreationForm() {
         selectedAlcohol={selectedAlcohol}
         selectedSmoking={selectedSmoking}
         selectedEducation={selectedEducation}
+        selectedLookingFor={selectedLookingFor}
+
         errors={errors}
         profilePhoto={profilePhoto}
         handleLastNameChange={(event) => setLastName(event.target.value)}
@@ -166,7 +199,11 @@ function ProfileCreationForm() {
         handleAlcoholChange={(event) => setSelectedAlcohol(event.target.value)}
         handleEducationChange={(event) => setSelectedEducation(event.target.value)}
         handleBirthdateChange={(event) => setBirthdate(event.target.value)}
-        handleProfessionChange={(event) => setProfession(event.target.value)}
+        handleLookingForChange={(event) => setSelectedLookingFor(event.target.value)}
+
+        handleOccupationChange={(event) => setOccupation(event.target.value)}
+        handleDescriptionChange={(event) => setDescription(event.target.value)}
+
 
         handleFileUpload={handleFileUpload}
         handleInterestClick={(interest) => {

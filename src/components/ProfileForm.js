@@ -8,14 +8,16 @@ function ProfileForm({
   postcode,
   city,
   birthdate,
-  profession,
+  occupation,
   selectedChildren,
   selectedSmoking,
   selectedEducation,
   selectedAlcohol,
   selectedZodiac,
   selectedInterests,
+  selectedLookingFor,
   errors,
+  description,
   profilePhoto,
   handleFirstNameChange,
   handleLastNameChange,
@@ -33,8 +35,13 @@ function ProfileForm({
   handleSmokingChange,
   handleEducationChange,
   handleBirthdateChange,
-  handleProfessionChange,
+  handleOccupationChange,
+  handleDescriptionChange,
+  handleLookingForChange,
+
 }) {
+
+  
   function calculateAge(birthdate) {
     const today = new Date();
     const birthDate = new Date(birthdate);
@@ -140,21 +147,49 @@ function ProfileForm({
   </div>
 )}
 
+<div>
+        <label htmlFor="lookingFor">Looking for:</label>
+        <select
+          id="LookingFor"
+          name="selectedLookingFor"
+          value={selectedLookingFor}
+          onChange={handleLookingForChange}
+        >
+          <option value="">Choose</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="both">Both</option>
+          <option value="others">Other</option>
+        </select>
+        {errors.selectedLookingFor && (
+          <div className="error">{errors.selectedLookingFor}</div>
+        )}
+      </div>
+
+
 
 <div>
-          <label htmlFor="profession">Job title:</label>
+          <label htmlFor="occupation">Job title:</label>
           <input
             type="text" // Use text type for city
-            id="profession"
-            name="profession"
-            value={profession}
-            onChange={handleProfessionChange}
+            id="occupation"
+            name="occupation"
+            value={occupation}
+            onChange={handleOccupationChange}
           />
           {errors.city && <div className="error">{errors.city}</div>}
         </div>
 
 
-
+        <div>
+  <label htmlFor="description">Description:</label>
+  <textarea
+    id="description"
+    name="description"
+    value={description}
+    onChange={handleDescriptionChange}
+  />
+</div>
 
 
 
@@ -167,7 +202,7 @@ function ProfileForm({
           value={selectedChildren}
           onChange={handleChildrenChange}
         >
-          <option value="">Vælg venligst</option>
+          <option value="">Choose</option>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -186,7 +221,7 @@ function ProfileForm({
           value={selectedEducation}
           onChange={handleEducationChange}
         >
-          <option value="">Vælg venligst</option>
+          <option value="">Choose</option>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -206,7 +241,7 @@ function ProfileForm({
           value={selectedZodiac}
           onChange={handleZodiacChange}
           >
-          <option value="">Vælg venligst</option>
+          <option value="">Choose</option>
           <option value="Vædderen">Vædderen</option>
           <option value="Tyren">Tyren</option>
           <option value="Tvillingerne">Tvillingerne</option>
@@ -233,7 +268,7 @@ function ProfileForm({
           value={selectedAlcohol}
           onChange={handleAlcoholChange}
           >
-          <option value="">Vælg venligst</option>
+          <option value="">Choose</option>
           <option value="Vædderen">Vædderen</option>
           <option value="Tyren">Tyren</option>
           <option value="Tvillingerne">Tvillingerne</option>
@@ -260,7 +295,7 @@ function ProfileForm({
           value={selectedSmoking}
           onChange={handleSmokingChange}
           >
-          <option value="">Vælg venligst</option>
+          <option value="">Choose</option>
           <option value="Vædderen">Vædderen</option>
           <option value="Tyren">Tyren</option>
           <option value="Tvillingerne">Tvillingerne</option>
@@ -305,7 +340,7 @@ function ProfileForm({
       
 
 
-      <button type="submit">Create Profile</button>
+      <button type="submit">Save</button>
     </form>
   );
 }

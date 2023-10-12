@@ -2,9 +2,8 @@
 import React, { useMemo } from 'react';
 import TinderCard from 'react-tinder-card'; // Make sure to import TinderCard
 import ProfileCard from './ProfileCard';
-import Profiles from '../data/profiles.json';
 
-function ProfileCardList({ characters, swipedRightProfiles, onSwipe, onCardLeftScreen }) {
+function ProfileCardList({ characters, swipedRight, onSwipe, onCardLeftScreen }) {
   const childRefs = useMemo(
     () =>
       Array(characters.length)
@@ -24,8 +23,8 @@ function ProfileCardList({ characters, swipedRightProfiles, onSwipe, onCardLeftS
             if (direction === "right") {
               // Save the profile data to localStorage
               localStorage.setItem(
-                "swipedRightProfiles",
-                JSON.stringify(swipedRightProfiles.concat(character))
+                "swipedRight",
+                JSON.stringify(swipedRight.concat(character))
               );
             }
             onSwipe(direction, character.name);
