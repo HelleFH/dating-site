@@ -1,22 +1,29 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import {
+  FaSmoking,
+  FaGlassMartini,
+  FaChild,
+  FaPen,
+} from 'react-icons/fa';
 
 function Favorites() {
-  const [swipedRight, setSwipedRight] = useState(JSON.parse(localStorage.getItem('swipedRight')) || []);
-  const [filteredProfiles, setFilteredProfiles] = useState(swipedRight); // Initialize with swipedRight
+  const [favoritedProfiles, setfavoritedProfiles] = useState(JSON.parse(localStorage.getItem('favoritedProfiles')) || []);
+  const [filteredProfiles, setFilteredProfiles] = useState(favoritedProfiles);
   const [hasChildrenFilter, setHasChildrenFilter] = useState("All");
   const [smokingFilter, setSmokingFilter] = useState("All");
   const [drinkingFilter, setDrinkingFilter] = useState("All");
   const [zodiacFilter, setZodiacFilter] = useState("All");
 
-    const uniqueSmokingHabits = ["All", ...new Set(swipedRight.map(profile => profile.smoking_habits))];
-  const uniqueAlcoholHabits = ["All", ...new Set(swipedRight.map(profile => profile.alcohol_habits))];
-  const uniqueZodiacSigns = ["All", ...new Set(swipedRight.map(profile => profile.zodiac_sign))];
+    const uniqueSmokingHabits = ["All", ...new Set(favoritedProfiles.map(profile => profile.smoking_habits))];
+  const uniqueAlcoholHabits = ["All", ...new Set(favoritedProfiles.map(profile => profile.alcohol_habits))];
+  const uniqueZodiacSigns = ["All", ...new Set(favoritedProfiles.map(profile => profile.zodiac_sign))];
   
 
   useEffect(() => {
-    // Filtering logic based on swipedRight and filter criteria
-    const filtered = swipedRight.filter((profile) => {
+    // Filtering logic based on favoritedProfiles and filter criteria
+    const filtered = favoritedProfiles.filter((profile) => {
       // Your filtering conditions here
       const childrenCount = parseInt(profile.children, 10);
       const childrenMatch =
@@ -37,7 +44,7 @@ function Favorites() {
     });
 
     setFilteredProfiles(filtered);
-  }, [swipedRight, hasChildrenFilter, smokingFilter, drinkingFilter, zodiacFilter]);
+  }, [favoritedProfiles, hasChildrenFilter, smokingFilter, drinkingFilter, zodiacFilter]);
 
   const childrenFilterOptions = ["All", "Yes", "No"];
 
@@ -63,13 +70,16 @@ function Favorites() {
 
 
   return (
-    <div>
-      <h1>Your matches</h1>
-
-      <h2>Filter profiles</h2>
+    <div className="favorites-container">
+      <h1>Your favorites</h1>
 
 
-      <div>
+<div className="favorites-list">
+  <div className="favorites-list-filters">
+  <h2>Filter profiles</h2>
+
+      <div  >
+        
         <label htmlFor="childrenFilter">Filter by Children:</label>
         <select id="childrenFilter" value={hasChildrenFilter} onChange={handleChildrenFilterChange}>
           {childrenFilterOptions.map((option) => (
@@ -112,7 +122,7 @@ function Favorites() {
           ))}
         </select>
       </div>
-
+      </div>
       <div className="profileContainer">
       {filteredProfiles.map((profile) => (
         <div key={profile.id} className="profile">
@@ -123,10 +133,25 @@ function Favorites() {
           <h3>
             {profile.occupation} - {profile.location}
           </h3>
+          <div className="additional-info">
+              <p>
+                <FaSmoking /> {profile.smoking_habits}
+              </p>
+              <p>
+                <FaGlassMartini /> {profile.alcohol_habits}
+              </p>
+              <p>
+                <FaChild /> {profile.children}
+              </p>
+              <p>
+                <FaPen /> {profile.profile_text.substring(0, 30)}...
+              </p>
+            </div>
+
 
      {/* Button to go to the profile page */}
      <Link to={`/matchProfiles/${profile.id}`}>
-              <button onClick={() => handleViewProfileClick(profile)}>
+              <button className="favorites-view-profile-button" onClick={() => handleViewProfileClick(profile)}>
                 View Profile
               </button>
             </Link>
@@ -134,6 +159,7 @@ function Favorites() {
         </div>
       ))}
     </div>
+  </div>
   </div>
 );
   

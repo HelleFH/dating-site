@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import TinderCard from 'react-tinder-card'; // Make sure to import TinderCard
 import ProfileCard from './ProfileCard';
 
-function ProfileCardList({ characters, swipedRight, onSwipe, onCardLeftScreen }) {
+function ProfileCardList({ characters, favoritedProfiles, onSwipe, onCardLeftScreen }) {
   const childRefs = useMemo(
     () =>
       Array(characters.length)
@@ -23,8 +23,8 @@ function ProfileCardList({ characters, swipedRight, onSwipe, onCardLeftScreen })
             if (direction === "right") {
               // Save the profile data to localStorage
               localStorage.setItem(
-                "swipedRight",
-                JSON.stringify(swipedRight.concat(character))
+                "favoritedProfiles",
+                JSON.stringify(favoritedProfiles.concat(character))
               );
             }
             onSwipe(direction, character.name);

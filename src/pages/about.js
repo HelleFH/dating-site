@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaUser, FaBriefcase, FaBirthdayCake, FaUserPolice, FaPhone, FaMapMarker, FaEnvelope, FaChild, FaSmoking, FaGraduationCap, FaWineGlass, FaStar, FaListUl, FaBaby } from 'react-icons/fa'; // Import Font Awesome icons
+import { FaUser, FaPerson, FaBriefcase, FaBirthdayCake, FaUserPolice, FaPhone, FaMapMarker, FaEnvelope, FaChild, FaSmoking, FaGraduationCap, FaWineGlass, FaStar, FaListUl, FaBaby, FaCocktail } from 'react-icons/fa'; // Import Font Awesome icons
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function UserProfile() {
@@ -19,7 +19,7 @@ function UserProfile() {
     profilePhoto: '',
     birthday: '',
     description: '',
-    profession:'',
+    occupation:'',
   });
 
   useEffect(() => {
@@ -38,46 +38,56 @@ function UserProfile() {
         <h1>Welcome, {profileData.firstName}!</h1>
       )}
 
-      <div className='contact-info'>
-        {profileData.profilePhoto && (
+
+<div className='view-profile-personal-details'>
+<h2>Your contact information</h2>
+
+<div className='profile-photo'>  {profileData.profilePhoto && (
           <img src={profileData.profilePhoto} alt="Profile Preview" />
+        )}</div>
+      <div className='view-profile-contact-info'>
+      {profileData.firstName && (
+          <p>
+          <span><FaUser />  </span> {profileData.firstName} &nbsp;{profileData.lastName}
+          </p>
         )}
-        <h2>Your contact information</h2>
         {profileData.email && (
           <p>
-          <span>  <FaEnvelope /> Email: </span><span>{profileData.email}</span>
+          <span>  <FaEnvelope /> </span><span>{profileData.email}</span>
           </p>
         )}
         {profileData.phone && (
           <p>
-           <span> <FaPhone /> Phone: </span><span>{profileData.phone}</span>
+           <span> <FaPhone />  </span><span>{profileData.phone}</span>
           </p>
         )}
         {profileData.postcode && (
           <p>
-            <span><FaMapMarker /> Postcode:</span><span>{profileData.postcode}</span> 
+            <span><FaMapMarker /></span><span>{profileData.postcode}, {profileData.city}</span> 
           </p>
         )}
         {profileData.city && (
           <p>
-       <span>    <FaMapMarker /> City:</span> <span>{profileData.city}</span> 
+     <span></span> 
           </p>
         )}
       </div>
+      </div>
 
-      <div class="user-info">
+      <div class="view-profile-user-info">
         <h2>Additional information</h2>
         {profileData.description && (
           <p><span>Profile text:</span><span>{profileData.description}</span></p>
         )}
+        <div className='selected-view-profile-user-info'>
         {profileData.selectedChildren && (
           <p>
         <span>    <FaBaby /> Children: </span><span>{profileData.selectedChildren}</span>
           </p>
         )}
-          {profileData.profession && (
+          {profileData.occupation && (
           <p>
-            <span><FaBriefcase /> Job:</span> <span>{profileData.profession}</span>
+            <span><FaBriefcase /> Job:</span> <span>{profileData.occupation}</span>
           </p>
         )}
 
@@ -95,7 +105,7 @@ function UserProfile() {
 
         {profileData.selectedAlcohol && (
           <p>
-           <span> <FaWineGlass /> Alcohol:</span> <span>{profileData.selectedAlcohol}</span>
+           <span> <FaCocktail /> Alcohol:</span> <span>{profileData.selectedAlcohol}</span>
           </p>
         )}
 
@@ -104,13 +114,14 @@ function UserProfile() {
            <span> <FaStar /> Zodiac:</span> <span>{profileData.selectedZodiac}</span>
           </p>
         )}
+        </div>
 
         {profileData.selectedInterests && profileData.selectedInterests.length > 0 && (
           <div>
-            <p>
-              <FaListUl />Interests:
-            </p>
-            <ul>
+       
+         <h2>Interests:</h2>
+
+            <ul class="view-profile-interests">
               {profileData.selectedInterests.map((interest, index) => (
                 <li key={index}>{interest}</li>
               ))}

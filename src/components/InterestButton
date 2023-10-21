@@ -5,7 +5,7 @@ function InterestButton({ label, selected, onClick }) {
   return (
     <button
       type="button"
-      className={`interest-button ${selected ? 'selected' : ''}`}
+      className={`profile-form-interest-button ${selected ? 'selected' : ''}`}
       onClick={onClick}
     >
       {label}

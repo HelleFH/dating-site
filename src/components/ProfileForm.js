@@ -57,7 +57,21 @@ function ProfileForm({
 
   return (
     <form className="profile-form" onSubmit={handleFormSubmit}>
-      <div className="form-fields">
+      <h2>Create Your Profile</h2>
+      <div className="profile-form-form-fields">
+      <div className='profile-form-photo-container'>
+        <label htmlFor="profilePhoto"><h3>Profile Photo:</h3></label>
+        <input
+          type="file"
+          id="profilePhoto"
+          accept="image/*"
+          onChange={handleFileUpload}
+        />
+        {profilePhoto && <img className="create-profile-photo" src={profilePhoto} alt="Profile Preview" />}
+        {errors.profilePhoto && (
+          <div className="error">{errors.profilePhoto}</div>
+        )}
+      </div>
         <div>
           <label htmlFor="firstName">First Name:</label>
           <input
@@ -66,8 +80,8 @@ function ProfileForm({
             name="firstName"
             value={firstName}
             onChange={handleFirstNameChange}
+            placeholder={errors.firstName}
           />
-          {errors.firstName && <div className="error">{errors.firstName}</div>}
         </div>
         <div>
           <label htmlFor="lastName">Last Name:</label>
@@ -77,8 +91,8 @@ function ProfileForm({
             name="lastName"
             value={lastName}
             onChange={handleLastNameChange}
+            placeholder={errors.lastName}
           />
-          {errors.lastName && <div className="error">{errors.lastName}</div>}
         </div>
         <div>
           <label htmlFor="email">Email:</label>
@@ -88,8 +102,8 @@ function ProfileForm({
             name="email"
             value={email}
             onChange={handleEmailChange}
+            placeholder={errors.email}
           />
-          {errors.email && <div className="error">{errors.email}</div>}
         </div>
         <div>
           <label htmlFor="phone">Phone:</label>
@@ -99,8 +113,8 @@ function ProfileForm({
             name="phone"
             value={phone}
             onChange={handlePhoneChange}
+            placeholder={errors.phone}
           />
-          {errors.phone && <div className="error">{errors.phone}</div>}
         </div>
         <div>
           <label htmlFor="postcode">Postcode:</label>
@@ -110,8 +124,8 @@ function ProfileForm({
             name="postcode"
             value={postcode}
             onChange={handlePostcodeChange}
+            placeholder={errors.postcode}
           />
-          {errors.postcode && <div className="error">{errors.postcode}</div>}
         </div>
         <div>
           <label htmlFor="city">City:</label>
@@ -121,8 +135,9 @@ function ProfileForm({
             name="city"
             value={city}
             onChange={handleCityChange}
+            placeholder={errors.city}
+
           />
-          {errors.city && <div className="error">{errors.city}</div>}
         </div>
         <div>
           <label htmlFor="birthdate">Birthdate:</label>
@@ -155,7 +170,7 @@ function ProfileForm({
           value={selectedLookingFor}
           onChange={handleLookingForChange}
         >
-          <option value="">Choose</option>
+          <option value="">Please select</option>
           <option value="men">Men</option>
           <option value="women">Women</option>
           <option value="both">Both</option>
@@ -177,7 +192,6 @@ function ProfileForm({
             value={occupation}
             onChange={handleOccupationChange}
           />
-          {errors.city && <div className="error">{errors.city}</div>}
         </div>
 
 
@@ -202,7 +216,7 @@ function ProfileForm({
           value={selectedChildren}
           onChange={handleChildrenChange}
         >
-          <option value="">Choose</option>
+          <option value="">Please select</option>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -221,7 +235,7 @@ function ProfileForm({
           value={selectedEducation}
           onChange={handleEducationChange}
         >
-          <option value="">Choose</option>
+          <option value="">Please select</option>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -241,7 +255,7 @@ function ProfileForm({
           value={selectedZodiac}
           onChange={handleZodiacChange}
           >
-          <option value="">Choose</option>
+          <option value="">Please select</option>
           <option value="Vædderen">Vædderen</option>
           <option value="Tyren">Tyren</option>
           <option value="Tvillingerne">Tvillingerne</option>
@@ -268,19 +282,14 @@ function ProfileForm({
           value={selectedAlcohol}
           onChange={handleAlcoholChange}
           >
-          <option value="">Choose</option>
-          <option value="Vædderen">Vædderen</option>
-          <option value="Tyren">Tyren</option>
-          <option value="Tvillingerne">Tvillingerne</option>
-          <option value="Krebsen">Krebsen</option>
-          <option value="Løven">Løven</option>
-          <option value="Jomfruen">Jomfruen</option>
-          <option value="Vægten">Vægten</option>
-          <option value="Skorpionen">Skorpionen</option>
-          <option value="Skytten">Skytten</option>
-          <option value="Stenbukken">Stenbukken</option>
-          <option value="Vandbæreren">Vandbæreren</option>
-          <option value="Fisken">Fisken</option>
+
+
+          <option value="">Please select</option>
+          <option value="only for special occasions">Only for special occasions</option>
+          <option value="non-drinker">Non-drinker</option>
+          <option value="Typically every evening">Typically every evening</option>
+          <option value="if I have fun plans">If I have fun plans</option>
+       
         </select>
         {errors.selectedAlcohol && (
           <div className="error">{errors.selectedAlcohol}</div>
@@ -295,10 +304,11 @@ function ProfileForm({
           value={selectedSmoking}
           onChange={handleSmokingChange}
           >
-          <option value="">Choose</option>
-          <option value="Vædderen">Vædderen</option>
-          <option value="Tyren">Tyren</option>
-          <option value="Tvillingerne">Tvillingerne</option>
+
+          <option value="">Please select</option>
+          <option value="social smoker">Social smoker</option>
+          <option value="non-smoker">Non-smoker</option>
+          <option value="smoker">Smoker</option>
         
         </select>
         {errors.selectedSmoking && (
@@ -306,27 +316,15 @@ function ProfileForm({
         )}
       </div>
       </div>
+      
       <div>
-        <label htmlFor="profilePhoto">Profile Photo:</label>
-        <input
-          type="file"
-          id="profilePhoto"
-          accept="image/*"
-          onChange={handleFileUpload}
-        />
-        {profilePhoto && <img src={profilePhoto} alt="Profile Preview" />}
-        {errors.profilePhoto && (
-          <div className="error">{errors.profilePhoto}</div>
-        )}
-      </div>
-      <div>
-        <label>Interests:</label>
-        <div className="interest-buttons">
+        <label><h2>Interests:</h2></label>
+        <div className="profile-form-interest-buttons">
           {interestOptions.map((interest) => (
             <button
               type="button"
               key={interest}
-              className={`interest-button ${
+              className={`profile-form-interest-button ${
                 selectedInterests.includes(interest) ? 'selected' : ''
               }`}
               onClick={() => handleInterestClick(interest)}
@@ -340,7 +338,7 @@ function ProfileForm({
       
 
 
-      <button type="submit">Save</button>
+      <button className='profile-form-submit-button' type="submit">Save</button>
     </form>
   );
 }

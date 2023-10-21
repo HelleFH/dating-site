@@ -63,69 +63,73 @@ function SignUpForm() {
 
   return (
       <form class="signup-form">
-      
-      
+
+
+
         <div>
-          <label htmlFor="firstName">First name:</label>
+          <label htmlFor="firstName"><h2>First Name:</h2></label>
           <input
             type="text"
             id="firstName"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
+            placeholder={errors.firstName}
+
           />
-          {errors.name && 
-          <div className="error">{errors.firstName}
-          </div>}  
         </div>
 
         <div>
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="lastName"><h2>Last Name:</h2></label>
           <input
             type="text"
             id="lastName"
             value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            onChange={(e) => setLastName(e.target.value)
+            }
+            placeholder={errors.lastName}
+
           />
-          {errors.lastName && 
-          <div className="error">{errors.lastName}
-          </div>}
+        
         </div>
 
 
 
         <div>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email"><h2>Email:</h2></label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder={errors.email}
+
           />
-          {errors.email && <div className="error">{errors.email}</div>}
+        
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password"><h2>Password:</h2></label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder={errors.password}
+
           />
-          {errors.password && <div className="error">{errors.password}</div>}
         </div>
         <div>
-          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <label htmlFor="confirmPassword"><h2>Confirm Password:</h2></label>
           <input
             type="password"
             id="confirmPassword"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder={errors.confirmPassword}
+
           />
-          {errors.confirmPassword && (
-            <div className="error">{errors.confirmPassword}</div>
-          )}
+    
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button className="signup-form-submit-button" type="submit" onClick={handleSubmit}>
           Submit
         </button>
       </form>

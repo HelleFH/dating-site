@@ -78,21 +78,26 @@ function ProfileCreationForm() {
     }
   
     if (!firstName) {
-      errors.firstName = 'First name is required';
+      errors.firstName = 'Please enter your first name';
     }
   
     if (!lastName) {
-      errors.lastName = 'Last name is required';
+      errors.lastName = 'Please enter your last name';
     }
   
     if (!email) {
-      errors.email = 'Email is required';
+      errors.email = 'Please enter your email';
     }
   
     if (!birthdate) {
       errors.birthdate = 'Please enter your birthdate';
     }
-  
+    if (!postcode) {
+      errors.postcode = 'Please enter your postcode';
+    }
+    if (!city) {
+      errors.city = 'Please enter your city';
+    }
     return errors;
   };
 
@@ -166,7 +171,6 @@ function ProfileCreationForm() {
 
   return (
     <div>
-      <h2>Create Your Profile</h2>
       <ProfileForm
         firstName={firstName}
         lastName={lastName}

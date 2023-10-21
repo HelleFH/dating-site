@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const Bars = styled(FaBars)`
   display: none;
-  color: #808080;
+  color:  #333333;
   align-self: center;
   @media screen and (max-width: 768px) {
     display: flex;
@@ -17,23 +17,27 @@ const Bars = styled(FaBars)`
 const Bar = styled.nav`
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  height: 45px;
+  min-height: 45px;
   display: flex;
   align-items: center;
   width: 100%;
   background: rgb(222, 216, 162);
-  background: linear-gradient(
-    90deg,
-    rgba(222, 216, 162, 1) 0%,
-    rgba(202, 193, 106, 1) 35%,
-    rgba(189, 178, 70, 1) 100%
-  );
+  background-color: rgb(103, 213, 181);
 
+  margin:0;
+position:relative;
   @media (min-width: 768px) {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0;
     height: 70px;
+    width:100%;
+    background-color: rgb(103, 213, 181,0.1);
+
+
+  
+
+
   }
 `;
 
@@ -42,12 +46,7 @@ const MainNav = styled.ul`
   display: ${(props) => (props.display)};
   flex-direction: column;
   background: rgb(222, 216, 162);
-  background: linear-gradient(
-    90deg,
-    rgba(222, 216, 162, 1) 0%,
-    rgba(202, 193, 106, 1) 35%,
-    rgba(189, 178, 70, 1) 100%
-  );
+  background-color: rgb(103, 213, 181);
   position: absolute;
   z-index: 9999;
   top: 45px;
@@ -55,12 +54,22 @@ const MainNav = styled.ul`
   transition: transform 0.3s ease;
   transform: translateY(${(props) => (props.display === "flex" ? "0" : "-100%")});
   border-radius: 0 0 5px 5px;
+  margin:0;
+  padding:0;
 
   @media (min-width: 768px) {
     display: flex !important;
     margin-right: 30px;
     flex-direction: row;
     justify-content: flex-end;
+    background-color: rgb(103, 213, 181,0.3);
+
+flex-wrap:wrap;
+align-items:center;
+height:70px;
+
+width:100%;
+margin:25px 30px 18px 0px;
   }
 `;
 
@@ -68,7 +77,6 @@ const NavLi = styled.li`
   text-align: center;
   margin: 15px auto;
   position: relative;
-  padding-bottom: 1em;
 
   a {
     font-weight: 600;
@@ -89,7 +97,7 @@ const CloseButton = styled(FaTimes)` // Define the close button styling
   right: 10px;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #808080;
+  color: #333333;
   z-index: 1;
 
   @media screen and (max-width: 768px) {
@@ -120,6 +128,11 @@ const Navbar = () => {
           {open && <CloseButton onClick={closeMenu} />} {/* Close button */}
           
           <MainNav display={open ? "flex" : "none"}>
+          <NavLi>
+              <NavLink to="/home" onClick={closeMenu} activeStyle={{ color: "red" }}>
+                <img className="menu-logo" src="./images/logo.png" />
+              </NavLink>
+            </NavLi>
             <NavLi>
               <NavLink to="/about" onClick={closeMenu} activeStyle={{ color: "red" }}>
                 About

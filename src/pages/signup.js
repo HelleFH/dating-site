@@ -3,17 +3,28 @@ import SignUpForm from '../components/SignUpForm'; // Update the import path
 
 function SignUp() {
   return (
+    <div>
+    <div className='overlay'></div>
+
     <div className="signup-page">
-      <div class="signup-page-image"><div class="overlay"></div><img src='/images/couple-wedding.png' alt='Couple Wedding'></img>
-      </div>
+
+
+    
 <div class="signup-page-content">
-      <div>Fill out the form below to create an account.
-      </div>
-      <h1 class="signup-page-header">Sign Up</h1>
+<img className='signup-page-logo' src="../images/logo.png"/>
+
+<div className='signup-form-header-container'>
+      <h2>Fill out the form below to create your free acount account now!
+      </h2>
+</div>
+  
 
      <div class="signup-page-form"> <SignUpForm />
+     
+     
       </div>{/* Render your SignUpForm component here */}
       {/* Add other content or components as needed */}
+    </div>
     </div>
     </div>
   );
