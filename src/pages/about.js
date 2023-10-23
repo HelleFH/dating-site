@@ -134,7 +134,7 @@ function UserProfile() {
           <button>Edit</button>
         </Link>
         <Link to="/findMatches">
-          <button>Find Matches!</button>
+          <button>Find Matches</button>
         </Link>
       </div>
     </div>

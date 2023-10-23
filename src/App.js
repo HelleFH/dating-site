@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/index';
 import About from './pages/about';
 import ProfilePage from './pages/profile';
@@ -9,6 +9,7 @@ import SignUp from './pages/signup';
 import Favorites from './pages/favorites';
 import MatchProfile from './pages/matchProfile';
 import FindMatches from './pages/FindMatches';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/home' element={<Home />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

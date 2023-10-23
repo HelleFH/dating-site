@@ -1,37 +1,46 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import TinderCard from '../components/react-tinder-card/index';
-import profiles from '../data/profiles'; // Import the profiles data
+import profiles from '../data/profiles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FaTimes, FaHeart, FaUndo, FaStar } from 'react-icons/fa'; // Import Font Awesome icons
+import { FaTimes, FaHeart, FaUndo, FaStar } from 'react-icons/fa';
+
 function FindMatches() {
+  // State to store favorited profiles
   const [favoritedProfiles, setFavoritedProfiles] = useState([]);
-  const [showFavoriteMessage, setShowFavoriteMessage] = useState(false); // Add state for showing the message
+  const [showFavoriteMessage, setShowFavoriteMessage] = useState(false);
   const [showSwipedMessage, setShowSwipedMessage] = useState(false);
 
+  // Load favorited profiles from local storage when the component mounts
+  useEffect(() => {
+    const storedFavoritedProfiles = JSON.parse(localStorage.getItem('favoritedProfiles'));
+    if (storedFavoritedProfiles) {
+      setFavoritedProfiles(storedFavoritedProfiles);
+    }
+  }, []); // The empty dependency array ensures this effect runs once when the component mounts
 
+  // Function to add a profile to favorites
   const handleFavoriteClick = (profileToFavorite) => {
-    // Check if the profile is not already in the list of favorited profiles
     if (!favoritedProfiles.some((profile) => profile.name === profileToFavorite.name)) {
-      // Add the specific profile to the list of favorited profiles
       setFavoritedProfiles([...favoritedProfiles, profileToFavorite]);
       setShowFavoriteMessage(true);
 
-      // Automatically hide the message after 2 seconds (adjust the time as needed)
       setTimeout(() => {
         setShowFavoriteMessage(false);
       }, 2000);
     }
   };
-  
+
+  // Store the list of favorited profiles in local storage whenever it changes
   useEffect(() => {
-    // Store the list of favorited profiles in local storage whenever it changes
     localStorage.setItem('favoritedProfiles', JSON.stringify(favoritedProfiles));
   }, [favoritedProfiles]);
 
+  // State for the current card index, swiped direction, and card refs
   const [currentIndex, setCurrentIndex] = useState(profiles.length - 1);
   const [lastDirection, setLastDirection] = useState();
   const currentIndexRef = useRef(currentIndex);
 
+  // Create an array of refs for TinderCard components
   const childRefs = useMemo(
     () =>
       Array(profiles.length)
@@ -40,14 +49,17 @@ function FindMatches() {
     []
   );
 
+  // Function to update the current index
   const updateCurrentIndex = (val) => {
     setCurrentIndex(val);
     currentIndexRef.current = val;
   };
 
+  // Function to check if the user can go back in profiles
   const canGoBack = currentIndex < profiles.length - 1;
   const canSwipe = currentIndex >= 0;
 
+  // Function called when a card is swiped
   const swiped = (direction, _nameToDelete, index) => {
     setLastDirection(direction);
     updateCurrentIndex(index - 1);
@@ -58,16 +70,19 @@ function FindMatches() {
     }, 2000);
   };
 
+  // Function called when a card goes out of the card container
   const outOfFrame = (_name, idx) => {
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard();
   };
 
+  // Function to swipe a card
   const swipe = async (dir) => {
     if (canSwipe && currentIndex < profiles.length) {
-      await childRefs[currentIndex].current.swipe(dir); // Swipe the card!
+      await childRefs[currentIndex].current.swipe(dir);
     }
   };
 
+  // Function to go back to the previous card
   const goBack = async () => {
     if (!canGoBack) return;
     const newIndex = currentIndex + 1;
@@ -77,19 +92,17 @@ function FindMatches() {
 
   return (
     <div className="find-matches-container">
-      <h1>Swipe left or right or add to your favorites!</h1>
+      <h2>Swipe left or right or add to your favorites!</h2>
       {showFavoriteMessage && (
-        <h2 className="infoText">Added to favorites</h2>
+        <h3 className="infoText">Added to favorites</h3>
       )}
-     
-         {showSwipedMessage ? (
-          <h2 className="infoText">You swiped {lastDirection}</h2>
-        ) : (
-          <h2 className="infoText"></h2>
 
-          
-    
+      {showSwipedMessage ? (
+        <h3 className="infoText">You swiped {lastDirection}</h3>
+      ) : (
+        <h3 className="infoText"></h3>
       )}
+
       <div className="cardContainer">
         {profiles.map((character, index) => (
           <TinderCard
@@ -100,7 +113,7 @@ function FindMatches() {
             onCardLeftScreen={() => outOfFrame(character.name, index)}
           >
             <div className="card">
-              <img src={character.image} draggable='false' alt={`${character.name}'s profile`} />
+              <img src={character.image} draggable="false" alt={`${character.name}'s profile`} />
               <div className="card-i">
                 <h3>
                   {character.name}, {character.age}
@@ -110,17 +123,16 @@ function FindMatches() {
                 </h3>
               </div>
               <div className="card-buttons">
-                <a href="#" onClick={() => swipe('left')}>
+                <a onClick={(e) => { e.preventDefault(); swipe('left') }}>
                   <FaTimes />
                 </a>
-                <a href="#" onClick={() => goBack()}>
+                <a onClick={() => goBack()}>
                   <FaUndo />
                 </a>
-             
-                <a href="#" onClick={() => handleFavoriteClick(character)}>
-                  <FaStar /> {/* Add a favorite star icon */}
+                <a onClick={() => handleFavoriteClick(character)}>
+                  <FaStar />
                 </a>
-                <a href="#" onClick={() => swipe('right')}>
+                <a href="#" onClick={(e) => { e.preventDefault(); swipe('right') }}>
                   <FaHeart />
                 </a>
               </div>
@@ -128,9 +140,9 @@ function FindMatches() {
           </TinderCard>
         ))}
       </div>
-     
     </div>
   );
 }
 
 export default FindMatches;
+ 

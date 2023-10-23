@@ -217,10 +217,10 @@ function ProfileForm({
           onChange={handleChildrenChange}
         >
           <option value="">Please select</option>
-          <option value="0">0</option>
+          <option value="none">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
-          <option value="3 eller flere">3 eller flere</option>
+          <option value="3 or more">3 or more</option>
         </select>
         {errors.selectedChildren && (
           <div className="error">{errors.selectedChildren}</div>
@@ -236,10 +236,10 @@ function ProfileForm({
           onChange={handleEducationChange}
         >
           <option value="">Please select</option>
-          <option value="0">0</option>
+          <option value="none">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
-          <option value="3 eller flere">3 eller flere</option>
+          <option value="3 or more">3 or more</option>
         </select>
         {errors.selectedEducation && (
           <div className="error">{errors.selectedEducation}</div>

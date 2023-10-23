@@ -66,7 +66,7 @@ function SignUpForm() {
 
 
 
-        <div>
+        <div className="signup-form-name"> 
           <label htmlFor="firstName"><h2>First Name:</h2></label>
           <input
             type="text"
@@ -76,10 +76,7 @@ function SignUpForm() {
             placeholder={errors.firstName}
 
           />
-        </div>
-
-        <div>
-          <label htmlFor="lastName"><h2>Last Name:</h2></label>
+                  <label htmlFor="lastName"><h2>Last Name:</h2></label>
           <input
             type="text"
             id="lastName"
@@ -89,8 +86,9 @@ function SignUpForm() {
             placeholder={errors.lastName}
 
           />
-        
         </div>
+
+      
 
 
 

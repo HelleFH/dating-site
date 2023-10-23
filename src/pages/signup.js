@@ -14,8 +14,8 @@ function SignUp() {
 <img className='signup-page-logo' src="../images/logo.png"/>
 
 <div className='signup-form-header-container'>
-      <h2>Fill out the form below to create your free acount account now!
-      </h2>
+      <h3> Fill out the form below to create your free account!
+      </h3>
 </div>
   
 

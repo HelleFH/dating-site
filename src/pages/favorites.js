@@ -1,12 +1,10 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import {
-  FaSmoking,
-  FaGlassMartini,
-  FaChild,
-  FaPen,
-} from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faSmoking, faPen, faChild, faCoffee, faBeer, faCocktail, faStar, faBaby } from '@fortawesome/free-solid-svg-icons'; // Import Font Awesome icons
+
 
 function Favorites() {
   const [favoritedProfiles, setfavoritedProfiles] = useState(JSON.parse(localStorage.getItem('favoritedProfiles')) || []);
@@ -76,7 +74,7 @@ function Favorites() {
 
 <div className="favorites-list">
   <div className="favorites-list-filters">
-  <h2>Filter profiles</h2>
+          <h2>Filter profiles</h2>
 
       <div  >
         
@@ -125,27 +123,47 @@ function Favorites() {
       </div>
       <div className="profileContainer">
       {filteredProfiles.map((profile) => (
-        <div key={profile.id} className="profile">
-          <img src={profile.image} alt={`${profile.name}'s profile`} />
-          <h3>
+        
+      <div key={profile.id} className="profile">
+        <div className="profile-personal-info">
+          
+        <img src={profile.image} alt={`${profile.name}'s profile`} />
+          
+          <h4>
             {profile.name}, {profile.age}
-          </h3>
-          <h3>
+          </h4>
+          
+          <h4>
             {profile.occupation} - {profile.location}
-          </h3>
-          <div className="additional-info">
-              <p>
-                <FaSmoking /> {profile.smoking_habits}
-              </p>
-              <p>
-                <FaGlassMartini /> {profile.alcohol_habits}
-              </p>
-              <p>
-                <FaChild /> {profile.children}
-              </p>
-              <p>
-                <FaPen /> {profile.profile_text.substring(0, 30)}...
-              </p>
+          </h4>
+          <div className="profile-interest-list">
+          <h3>Interests:</h3>
+
+            <ul>
+              {profile.interests.map((interest, index) => (
+                <li key={index}>{interest}</li>
+              ))}
+            </ul>
+            </div>
+
+         
+          </div>
+          <div className='additional-info'>
+            <div>
+              <FontAwesomeIcon icon={faBaby} /><p>{profile.children}</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faSmoking} /> <p>{profile.smoking_habits}</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faCocktail} /><p> {profile.alcohol_habits}</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faStar} /><p>{profile.zodiac_sign}</p>
+            </div>
+            <div>
+            <FontAwesomeIcon icon={faPen} /><p>{profile.profile_text.substring(0, 75)}...</p>
+              </div>
             </div>
 
 

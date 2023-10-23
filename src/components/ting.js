@@ -618,7 +618,7 @@ input[type='file'] {
 
 
 
-.find-matches-container h1 {
+.find-matches-container h2 {
   grid-column: 1/span 3;
   grid-row: 1;
   text-align: center;

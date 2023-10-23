@@ -1,4 +1,6 @@
 @import url("https://use.typekit.net/vul5gtv.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 
 * {
   font-family: neue-haas-grotesk-display, sans-serif;
@@ -7,16 +9,12 @@
   margin: 0;
   user-select: none;
   text-decoration: none;
-
-
-
 }
 
 img {
   max-width: 100%;
-  height: auto;
-  margin: 0;
   display: block;
+
 }
 
 h1 {
@@ -28,19 +26,29 @@ h1 {
 h2 {
   font-size: 1.2em;
   color: #333333;
-
+  font-weight: 600;
 }
 
 h3 {
   font-size: 1em;
   color: #333333;
-
 }
 
-#root {
-  background-color: rgba(217, 217, 227, .1);
+ul {
+  list-style: none;
 }
 
+nav ul {
+  align-content: center;
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+li a:hover {
+  text-decoration: underline;
+}
 
 a:visited {
   color: #333333;
@@ -50,6 +58,49 @@ a:active {
   color: #8C1231;
 }
 
+.menu-logo {
+  max-width: 120px;
+  background: rgb(255, 255, 255, 0.8);
+  padding: 0.7em;
+  border-radius: 15px;
+}
+
+footer {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  z-index: 999;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .container {
+  width: 100%;
+  bottom: 0;
+  padding: 1em;
+  bottom: 0;
+
+  min-height: 50px;
+  background-color: rgb(103, 213, 181);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+footer img {
+  max-width: 100px;
+  background-color: rgb(255, 255, 255, 0.7);
+  padding: 0.7em;
+  border-radius: 10px;
+  place-self: center;
+}
 
 button {
   flex-shrink: 0;
@@ -67,29 +118,31 @@ button:hover {
   transform: scale(1.05);
 }
 
-
 @media (min-width: 767px) {
-
-
 
   h1 {
     font-size: 2em;
-
     font-weight: bold;
   }
 
   h2 {
     font-size: 1.5em;
-
     font-weight: bold;
   }
 
   h3 {
     font-size: 1.17em;
-
     font-weight: bold;
   }
 
+  .menu-logo {
+    max-width: 120px;
+  }
+}
+
+#root {
+  color: #333333;
+  width: 100vw;
 }
 
 
@@ -104,20 +157,29 @@ button:hover {
     rgb(255, 195, 160, 0.4);
 }
 
+.view-profile h1 {
+  padding: 0.2em;
+}
+
 .profile-photo {
-  max-width: 200px;
+  max-width: 150px;
+}
+
+.create-profile-photo {border-radius: 50%;}
+.profile-photo img {
+  border-radius: 3px;
 }
 
 .view-profile-personal-details {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr;
   align-items: center;
   background-color: white;
   padding-bottom: 2em;
   padding-left: 1em;
   font-weight: bold;
-  margin-top: 1em;
   padding-top: 1em;
+  gap: 1em;
 }
 
 .view-profile-contact-info {
@@ -125,8 +187,6 @@ button:hover {
   align-content: center;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 0.5em;
-
-
 }
 
 .view-profile-user-info {
@@ -147,15 +207,15 @@ button:hover {
   list-style: none;
 }
 
-
 .view-profile .buttons button {
   padding: 0.3em;
   max-width: 300px;
-  font-size: 1em;
+  font-size: 0.9em;
   white-space: nowrap;
   border: 1px solid !important;
-  border-radius: 0;
+  border-radius: 2px;
   background-color: #efefef;
+  font-weight: 400;
 }
 
 .view-profile .buttons {
@@ -171,7 +231,6 @@ button:hover {
   grid-template-columns: 1fr 3fr;
   padding-left: 5%;
   padding-right: 5%;
-
 }
 
 .view-profile-user-info {
@@ -184,7 +243,6 @@ button:hover {
   font-size: 1em;
   font-weight: bold;
 }
-
 
 .selected-view-profile-user-info {
   display: flex;
@@ -206,7 +264,7 @@ button:hover {
 }
 
 .view-profile-personal-details h2 {
-  grid-column: 1/span 2;
+  grid-column: 1;
 }
 
 .view-profile-interests {
@@ -235,51 +293,63 @@ button:hover {
   word-break: break-all;
 }
 
-
 @media (min-width: 767px) {
   .view-profile {
     padding-left: 5%;
     padding-right: 5%;
   }
 
+  .view-profile-personal-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  .view-profile-personal-details h2 {
+    grid-column: 1/span 2;
+  }
 
 }
-
 
 /********************CREATE PROFILE FORM*********************/
 
 .profile-form {
-  padding-left: 0.7em;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   margin-top: 2em;
 }
 
-
-
-
 .profile-form-form-fields label {
   min-width: 150px;
 }
 
 .create-profile-photo {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 .profile-form-photo-container {
   display: grid;
   grid-template-rows: auto auto auto;
+  place-self:flex-start;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #profilePhoto {
   grid-row: 3;
   grid-column: 1;
+  width: 110px !important;
+  place-self:center;
+  display:flex;
+  margin:0 auto;
 }
 
 .create-profile-photo {
   grid-row: 2;
   grid-column: 1;
+  place-self:flex-start;
 }
 
 .profile-form-photo-container label {
@@ -299,7 +369,7 @@ input[type='file'] {
   margin-bottom: 1em;
   gap: 0.4em;
 }
-
+.profile-form h2 {padding-left:0.5em;}
 select {
   font-size: 1em;
 }
@@ -345,9 +415,21 @@ select {
   margin: 0 auto;
   margin-bottom: 2em;
 }
+.profile-form-form-fields:not(:first-child) div input {min-width:50px;}
 
 
 @media (min-width: 767px) {
+  .profile-form h2 {padding-left:0em;}
+
+
+  .create-profile-photo {
+
+    place-self:center;
+    max-width: 200px;
+  }
+  .profile-form {
+    padding-left: 0.7em;
+  }
 
   .profile-form-form-fields {
     margin: 0;
@@ -357,16 +439,22 @@ select {
 
   .profile-form-form-fields div input {
     min-width: 300px;
+
   }
 
   .profile-form-form-fields div label {
     min-width: 300px;
     font-size: 1.2em;
   }
-
-
+  .profile-form-photo-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    place-self:center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }
-
 
 .profile-form-form-fields div:not(:first-child) {
   display: flex;
@@ -381,43 +469,42 @@ select {
   padding: 0.5em;
 }
 
-
-
 /********************************SIGN UP FORM*************************/
 
 .signup-page-logo {
   max-width: 200px;
   place-self: center;
   margin-top: 5em;
-  margin-bottom: 5em;
+  margin-bottom: 6em;
+  padding: 1.5em;
+  background: linear-gradient(rgb(255, 247, 242, 0.9) 75%, transparent 95%);
+  border-radius: 30px;
+
+
 }
 
 @media (min-width: 767px) {
 
   .signup-page-logo {
-    max-width: 600px;
+    max-width: 400px;
     place-self: center;
     margin-top: 5em;
     margin-bottom: 0em;
-    padding: 3em;
-    background: rgb(255, 255, 255, 0.7);
     border-radius: 50px;
-
-
+    padding: 3em;
   }
-
 }
-
-
 
 .signup-page::before {
   content: "";
   background-image: url(/images/couple-wedding.png);
-  background-size: cover;
+  background-size: contain;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background-position: center;
+  z-index: 1;
   position: absolute;
 
 
@@ -429,28 +516,53 @@ select {
   height: 100%;
   position: relative;
   flex-direction: column;
-  z-index: 9999;
+  z-index: 9998;
 }
-
-
 
 .signup-form-header-container {
   padding: 1.3em;
   font-size: 1.5em;
+}
+
+.signup-form-name {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.signup-form-name label:first-child {
+  grid-row: 1;
+  grid-column: 1;
+
+}
+
+.signup-form div input   {
+font-weight: 400;
+font-size: 1.2em;
+font-family: 'Roboto', sans-serif;
+
+}
+.signup-form-name label:nth-child(2) {
+  grid-row: 1;
+  grid-column: 2;
+
+}
+
+.signup-form-name input:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+
+}
+
+.signup-form-name input:nth-child(2) {
+  grid-row: 2;
+  grid-column: 1;
+  margin-bottom: 1em;
 
 }
 
 .signup-form-submit-button {
   min-width: 200px !important;
-}
-
-.overlay {
-  position: absolute;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgb(255, 195, 160, 0.2);
-  z-index: 1;
 }
 
 .signup-page-image {
@@ -474,18 +586,15 @@ select {
   z-index: 9996;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  min-width: 80%;
-  position: relative;
+
 }
 
 .signup-form-header-container {
-  background-color: rgb(255, 195, 160, 0.85);
+  background-color: rgb(255, 195, 160, 0.9);
   border-radius: 25px 25px 0 0;
   display: flex;
   flex-direction: column;
 }
-
 
 .signup-page-form {
   z-index: 9997;
@@ -497,10 +606,11 @@ select {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  background-color: rgb(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
   z-index: 9990;
   width: 100%;
   padding: 3em;
+  margin-bottom: 2em;
 }
 
 .signup-form label {
@@ -511,18 +621,14 @@ select {
 .signup-form button {
   place-self: center;
   margin-top: 3em;
-
 }
-
-
-
 
 .signup-page-form {
   display: flex;
   justify-content: center;
 }
 
-.signup-form div {
+.signup-form div:not(:first-child) {
   display: flex;
   flex-direction: column !important;
 }
@@ -536,16 +642,27 @@ select {
 }
 
 @media (min-width: 767px) {
+  .signup-form-name {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 1fr;
+    grid-column-gap: 2em;
+  }
+
+  .signup-form-name input:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+    margin-bottom: 0em;
+
+  }
 
   .signup-form-header-container {
-    margin-top: 10em;
+    margin-top: 6em;
+    background-color: rgb(255, 195, 160, 0.9);
   }
 
   .signup-form {
-
-
     border-radius: 0 0 25px 25px;
-
   }
 
   .signup-form div {
@@ -557,111 +674,84 @@ select {
     font-weight: bold;
     font-size: 1.5em;
     padding: 0.5em;
-
   }
-
 }
-
 
 /*********************HOME*********************/
-.menu-logo {
-  max-width: 120px;
-  background: rgb(255, 255, 255, 0.3);
-  padding: 0.7em;
-  border-radius: 15px;
+.home {
+  height: 100vh;
+  display: flex;
 }
 
-nav ul {
-  align-content: center;
-}
-
-.home-background-images {
+.home-background-images-container {
   z-index: 1;
   position: absolute;
   grid-row: 1/span 3;
   z-index: 5;
   overflow: hidden;
   width: 100%;
+  object-fit: cover;
+  top: 0;
+
 }
 
-.home-text h1 {
-  padding-left: 10%;
-  padding-right: 10%;
-  max-width: 80%;
-}
-
-.home-background-images div {
+.home-background-images-container div {
   display: flex;
   flex-direction: row;
   position: relative;
   z-index: 1;
 }
 
-.home {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
 .home-content {
   position: absolute;
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-columns: 1fr;
+  width: 100%;
+  justify-content: center;
 }
 
 
 .home-logo {
-  max-width: 300px;
-  grid-row: 1;
-  z-index: 9998;
-  justify-self: center;
-  margin-top: 6em;
-  background: linear-gradient(white 60%, transparent 90%);
-  background-color: rgb(255, 195, 160, 0.7);
-  padding: 2em;
-  border-radius: 20px;
+  max-width: 150px;
+  place-self: center;
+  margin-top: 1.5em;
+  margin-bottom: 5em;
+  padding: 1.2em;
+  background: rgb(255, 247, 242, 0.9);
+  border-radius: 30px;
+  z-index: 9999;
 }
 
-
 .home-text {
+
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 1.5em 2em 3em 4em;
+  
   display: flex;
   flex-direction: column;
   z-index: 9997;
-  color: black;
   grid-row: 2;
-  margin: 0 auto;
   border-radius: 20px;
-  justify-content: center;
-  background: linear-gradient(white 50%, transparent 90%);
-  background-color: rgb(255, 195, 160, 0.9);
-  max-width: 95vw;
-  padding-bottom: 5em;
-  margin-bottom: -4em;
-  margin-top: 1em;
+background-color: rgb(255,255,255, 0.9);  padding-bottom: 2em;
 
-}
-
-@media (min-width: 767px) {
-  .home-text {
-
-    max-width: 80vw;
-
-
-  }
-
-  .menu-logo {
-    max-width: 120px;
-  }
 }
 
 .home-text h2 {
-  padding: 3em 2em 2em 2em;
+  padding: 2em 2em 2em 2em;
   border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .home-button {
   align-self: center;
+  max-width: 250px;
+  z-index: 9999;
+  grid-row: 4;
+  place-self: center;
+
 }
 
 .home-logo {
@@ -670,50 +760,74 @@ nav ul {
 
 .home-profile-photos {
   grid-row: 3;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   flex-direction: row;
   z-index: 7;
   width: 100%;
-  overflow: hidden;
-  margin-top: -1em;
   z-index: 9;
+  position: relative;
+  margin-top:-2.5em;
 
 }
 
 .home-profile-photos img {
-  min-width: 300px;
+  min-width: 120px;
+}
+
+.home-background-images-container img {
+  min-width: 390px;
 }
 
 .home-background-images img {
-  min-width: 800px;
+  object-fit: contain;
 }
 
-.home-button {
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  margin-top: 2em;
-  margin-bottom: -2em;
 
-}
+
 
 .home-button button {
   font-size: 20px;
   white-space: nowrap;
 }
 
+@media (min-width: 767px) {
+
+  .home-logo {
+    max-width: 300px;
+    margin-top: 2em;
+
+  }
+
+  .home-background-images-container img {
+    min-width: 800px;
+  }
+
+  .home-text {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 2em 2em 3em 4em;
+    margin-top: 3em;
+  }
+
+  .home-button button {
+    margin-bottom: -4em;
+  }
+
+  .home-profile-photos {
+
+    margin-top: 1em;
 
 
+  }
 
+}
 
 /***************************************FIND MATCHES /TINDER CARDS ************************/
 
-
-
-
-.find-matches-container h1 {
+.find-matches-container h2 {
   text-align: center;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
 .find-matches-container {
@@ -726,14 +840,14 @@ nav ul {
 
 .cardContainer {
   display: flex;
-  width: 90vw;
+  width: 100vw;
   margin: 0 auto;
   align-items: center;
   position: relative;
-  margin: 0 auto;
   justify-content: center;
   min-height: 90vh;
-  margin-top: -5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .card-buttons {
@@ -743,9 +857,7 @@ nav ul {
   justify-content: space-between;
   padding-left: 5%;
   padding-right: 5%;
-  padding-bottom: 2em;
   margin-top: 1.5em;
-
 }
 
 .card-buttons a:first-child,
@@ -759,7 +871,8 @@ nav ul {
 }
 
 .card-buttons a:last-child svg {
-  color: #8C1231;
+  color: red;
+
 }
 
 .card-buttons a:nth-child(3) svg {
@@ -771,41 +884,36 @@ nav ul {
 
 }
 
-
 .card-buttons a {
   font-size: 2em;
   display: flex;
-
-
 }
-
 
 .card {
   position: relative;
   background: linear-gradient(to bottom, rgb(255, 236, 224), rgb(255, 231, 217));
-  width: 80vw;
-  min-width: 280px;
+  width: 100vw;
   min-height: 350px;
-  max-width: 250px;
-  box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.30);
+  max-width: 100vw;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   padding: 1em;
+  box-shadow: inset gray 0px 0px 15px -8px;
+
 }
-
-
 
 @media (min-width: 767px) {
   .card {
-    max-width: 500px;
+    max-width: 350px;
   }
 
   .cardContainer {
-    top: 60%;
-    min-height: 1000px;
+    min-height: 800px;
+    margin-top: 0em;
+
   }
 
 }
@@ -831,15 +939,14 @@ nav ul {
 .infoText {
   width: 100%;
   justify-content: center;
-  display: flex;
-  color: #FFA500;
   animation-name: popup;
   animation-duration: 800ms;
+  position: absolute;
+  font-weight: 400;
+  color: #333333;
+  text-align: center;
+  padding-top: 1em;
 }
-
-
-
-
 
 @keyframes popup {
   0% {
@@ -871,7 +978,6 @@ nav ul {
   }
 }
 
-
 /*******************************FAVORITES*****************************/
 
 .favorites-container {
@@ -879,7 +985,7 @@ nav ul {
   flex-direction: column;
   align-items: center;
   margin-top: 2em;
-
+  margin-bottom: 2em;
 }
 
 
@@ -895,18 +1001,69 @@ nav ul {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin-top: 4em;
+  margin-top: 2em;
   border: 1px solid #e0e0e0;
   /* Add a subtle border */
   border-radius: 8px;
-  padding: 1.5em;
-  background-color: rgb(255, 195, 160, 0.2);
-  min-width: 250px;
+  padding: 0.5em;
+  background-color: rgb(255, 195, 160, 0.4);
+  width: 99vw;
 
 }
 
+.profile-personal-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto auto;
+}
+.profile-personal-info h4:first-child {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.profile-personal-info h4:nth-child(2) {
+  grid-column: 2;
+  grid-row: 2
+}
+
+.profile-personal-info ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 0;
+}
+
+.profile-personal-info ul li {
+  background-color: white;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 0.3em;
+}
+
+.profile img {
+  width: 150px;
+  grid-column: 1;
+  grid-row: 1/span 3
+}
+
+.profile-interest-list {
+  grid-column: 2;
+  grid-row: 3;
+}
+
 .favorites-view-profile-button {
-  place-self: center;
+  padding: 0.5em;
+  max-width: 100px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  border-radius: 2px;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  /* Define the gradient background */
+  font-weight: 600;
+  right: 0;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
 }
 
 .favorites-list option {
@@ -915,16 +1072,16 @@ nav ul {
 
 .favorites-list select {
   width: 100px;
+  margin-right: 0.2em;
 }
 
 .favorites-list-filters {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-  margin-top:2em;
-  
+  margin-top: 2em;
 }
 
 .favorites-list-filters div {
@@ -938,37 +1095,78 @@ nav ul {
 .additional-info {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
   margin-bottom: 1em;
 }
 
+.additional-info div {
+  display: grid;
+  gap: 0.2em;
+  grid-template-columns: 20px 1fr;
+  background-color: rgb(255, 255, 255, 0.9);
+  padding: 0.5em;
+}
+
+.additional-info div svg {
+  padding-right: 1em;
+  width: 15px;
+
+}
+
 .additional-info p {
-  display: flex;
-  gap: 1em;
+  font-family: 'Roboto', sans-serif;
 }
 
 .profile a {
+  justify-content: flex-end;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
 
+
 @media (min-width: 767px) {
+
+  .profile-form {width: 50vw;}
+  .profile  {width:50vw;}
   .favorites-list-filters div {
     display: flex;
-    width:40%;
+    width: 400px;
     flex-direction: row;
     gap: 1em;
     align-items: center;
     justify-content: space-between;
   }
 
+  .favorites-container {
+    align-items: flex-start;
+  }
 
+  .favorites-container h1 {
+    padding-left: 0.5em;
+  }
+
+  .favorites-list-filters {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-top: 2em;
+  }
 }
-
 
 /*****************************FAVORITE PROFILE****************************/
 .favorite-profile-container {
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-to-favorites-button {
+  margin-top: 2em;
 }
 
 @media (min-width: 767px) {}
