@@ -129,17 +129,17 @@ function Favorites() {
           
         <img src={profile.image} alt={`${profile.name}'s profile`} />
           
-          <h4>
+          <h3>
             {profile.name}, {profile.age}
-          </h4>
+          </h3>
           
           <h4>
             {profile.occupation} - {profile.location}
           </h4>
-          <div className="profile-interest-list">
-          <h3>Interests:</h3>
+          <div className="profile-interest-list-container">
+          <h4>Interests:</h4>
 
-            <ul>
+            <ul className="profile-interest-list">
               {profile.interests.map((interest, index) => (
                 <li key={index}>{interest}</li>
               ))}
@@ -167,12 +167,12 @@ function Favorites() {
             </div>
 
 
-     {/* Button to go to the profile page */}
+     {/* Button to go to the profile page */}              <button className="favorites-view-profile-button" onClick={() => handleViewProfileClick(profile)}>
+
      <Link to={`/matchProfiles/${profile.id}`}>
-              <button className="favorites-view-profile-button" onClick={() => handleViewProfileClick(profile)}>
                 View Profile
-              </button>
             </Link>
+            </button>
 
         </div>
       ))}

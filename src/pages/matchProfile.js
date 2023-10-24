@@ -1,6 +1,6 @@
   import React, { useState, useEffect } from 'react';
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-  import { faSmoking, faChild, faCoffee, faBeer, faCocktail, faStar, faBaby } from '@fortawesome/free-solid-svg-icons'; // Import Font Awesome icons
+  import { faSmoking, faChild, faPen, faCoffee, faBeer, faCocktail, faStar, faBaby } from '@fortawesome/free-solid-svg-icons'; // Import Font Awesome icons
   import { Link } from 'react-router-dom';
 
   function MatchProfile() {
@@ -17,43 +17,57 @@
     // Your rendering logic here to display the selectedProfile
     return (
       <div className='favorite-profile-container'>
-        {selectedProfile && (
-          <div className="profile">
-                    <h1>  {addPossessiveS(selectedProfile.name)}  Profile</h1>
+        <h2>
+  {addPossessiveS(selectedProfile.name)} {' '} {' '}   Profile
+</h2>
+        <div key={selectedProfile.id} className="profile">
+        <div className="profile-personal-info">
+          
+        <img src={selectedProfile.image} alt={`${selectedProfile.name}'s profile`} />
+          
+          <h3>
+            {selectedProfile.name}, {selectedProfile.age}
+          </h3>
+          
+          <h4>
+            {selectedProfile.occupation} - {selectedProfile.location}
+          </h4>
+          <div className="profile-interest-list-container">
+          <h4>Interests:</h4>
 
-            <img src={selectedProfile.image} alt={selectedProfile.name} />
-            <h3>
-  {selectedProfile.name} {selectedProfile.lastName}, {selectedProfile.age}
-</h3>
-            <h3>
-              {selectedProfile.occupation} - {selectedProfile.location}
-            </h3>
-            {selectedProfile.profile_text && (
-              <div>
-                <h3>Description:</h3>
-                <p>{selectedProfile.profile_text}</p>
-              </div>
-            )}
-            <div className='additional-info'>
-            <p>
-              <FontAwesomeIcon icon={faBaby} /><h3>{selectedProfile.children}</h3>
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faSmoking} /> <h3>{selectedProfile.smoking_habits}</h3>
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faCocktail} /><h3> {selectedProfile.alcohol_habits}</h3>
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faStar} /><h3>{selectedProfile.zodiac_sign}</h3>
-            </p>
+          <ul className="profile-interest-list">
+              {selectedProfile.interests.map((interest, index) => (
+                <li key={index}>{interest}</li>
+              ))}
+            </ul>
             </div>
-           
+
+         
           </div>
-        )}
-         <Link to="/favorites">
-        <button className="back-to-favorites-button">Back to Favorites</button>
-      </Link>
+          <div className='additional-info'>
+            <div>
+              <FontAwesomeIcon icon={faBaby} /><p>{selectedProfile.children}</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faSmoking} /> <p>{selectedProfile.smoking_habits}</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faCocktail} /><p> {selectedProfile.alcohol_habits}</p>
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faStar} /><p>{selectedProfile.zodiac_sign}</p>
+            </div>
+            <div>
+            <FontAwesomeIcon icon={faPen} /><p>{selectedProfile.profile_text}</p>
+              </div>
+            </div>
+
+        
+       
+      </div>
+      <button className="back-to-favorites-button"> <Link to="/favorites">
+   Back to Favorites  </Link></button>
+    
       </div>
     );
   }

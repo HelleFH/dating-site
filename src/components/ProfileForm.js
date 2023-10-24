@@ -58,7 +58,7 @@ function ProfileForm({
   return (
     <form className="profile-form" onSubmit={handleFormSubmit}>
       <h2>Create Your Profile</h2>
-      <div className="profile-form-form-fields">
+      <div className="profile-form-fields">
       <div className='profile-form-photo-container'>
         <label htmlFor="profilePhoto"><h3>Profile Photo:</h3></label>
         <input

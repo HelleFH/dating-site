@@ -1,5 +1,4 @@
- const profiles = [
-
+const profiles = [
   {
     "id": 1,
     "name": "Anders",
@@ -19,8 +18,6 @@
     "image": "/images/profile-photos/user-image(13).png",
     "profile_text": "I'm a financial analyst with a passion for photography, travel, and technology. I'm looking for a woman who shares my interests and can join me on exciting adventures."
   },
-
-  
   {
     "id": 2,
     "name": "Maja",
@@ -96,7 +93,8 @@
     "children": "1",
     "image": "/images/profile-photos/user-image(19).png",
     "profile_text": "I'm a creative and outgoing person who likes to take long hikes in the mountains and cook healthy food at home. I'm looking for a man who can appreciate my positive attitude and fun personality, and who likes to stay active and healthy."
-  },  {
+  },
+  {
     "id": 6,
     "name": "Clara",
     "last_name": "Poulsen",
@@ -248,46 +246,44 @@
     "image": "/images/profile-photos/user-image(17).png",
     "profile_text": "I'm a helpful and active person who'd like to make a difference in the world. I love traveling and experiencing new cultures and enjoy helping others through volunteering and charity work. I'm looking for a person who has the same attitude and is ready to take the world by storm together with me."
   },
-  
-    {
-      "id": 14,
-      "name": "Jason",
-      "last_name": "Hansen",
-      "age": 32,
-      "gender": "Female",
-      "looking_for": "Men",
-      "location": "Aalborg",
-      "hometown": "Hjørring",
-      "education_level": "Master's degree",
-      "occupation": "Psychologist",
-      "zodiac_sign": "Libra",
-      "alcohol_habits": "Only for special occasions",
-      "smoking_habits": "Smoker",
-      "interests": ["Psychology", "Traveling", "Yoga", "Cooking", "Music", "Hiking and outdoor activities"],
-      "children": "1",
-      "image": "/images/profile-photos/user-image(14).png",
-      "profile_text": "I'm a psychologist who's passionate about understanding people and helping them lead better lives. I'm looking for a man who's intellectually curious and ready to explore the depths of the human mind with me."
-    },
-    {
-      "id": 15,
-      "name": "Søren",
-      "last_name": "Olsen",
-      "age": 28,
-      "gender": "Male",
-      "looking_for": "Women",
-      "location": "Copenhagen",
-      "hometown": "Vejle",
-      "education_level": "Bachelor's degree",
-      "occupation": "Teacher",
-      "zodiac_sign": "Sagittarius",
-      "alcohol_habits": "In the weekends if I have fun plans",
-      "smoking_habits": "Non-smoker",
-      "interests": ["Teaching", "Traveling", "Yoga", "Cooking", "Music", "Hiking and outdoor activities"],
-      "children": "2",
-      "image": "/images/profile-photos/user-image(15).png",
-      "profile_text": "I'm a teacher who's passionate about education and enjoys helping young minds grow. On the weekends, I like to have fun and enjoy life to the fullest. I'm looking for a woman who shares my love for learning and adventure."
-    },
-    
+  {
+    "id": 14,
+    "name": "Jason",
+    "last_name": "Hansen",
+    "age": 32,
+    "gender": "Female",
+    "looking_for": "Men",
+    "location": "Aalborg",
+    "hometown": "Hjørring",
+    "education_level": "Master's degree",
+    "occupation": "Psychologist",
+    "zodiac_sign": "Libra",
+    "alcohol_habits": "Only for special occasions",
+    "smoking_habits": "Smoker",
+    "interests": ["Psychology", "Traveling", "Yoga", "Cooking", "Music", "Hiking and outdoor activities"],
+    "children": "1",
+    "image": "/images/profile-photos/user-image(14).png",
+    "profile_text": "I'm a psychologist who's passionate about understanding people and helping them lead better lives. I'm looking for a man who's intellectually curious and ready to explore the depths of the human mind with me."
+  },
+  {
+    "id": 15,
+    "name": "Søren",
+    "last_name": "Olsen",
+    "age": 28,
+    "gender": "Male",
+    "looking_for": "Women",
+    "location": "Copenhagen",
+    "hometown": "Vejle",
+    "education_level": "Bachelor's degree",
+    "occupation": "Teacher",
+    "zodiac_sign": "Sagittarius",
+    "alcohol_habits": "In the weekends if I have fun plans",
+    "smoking_habits": "Non-smoker",
+    "interests": ["Teaching", "Traveling", "Yoga", "Cooking", "Music", "Hiking and outdoor activities"],
+    "children": "2",
+    "image": "/images/profile-photos/user-image(15).png",
+    "profile_text": "I'm a teacher who's passionate about education and enjoys helping young minds grow. On the weekends, I like to have fun and enjoy life to the fullest. I'm looking for a woman who shares my love for learning and adventure."
+  },
   {
     "id": 16,
     "name": "Lone",
@@ -307,87 +303,81 @@
     "image": "/images/profile-photos/user-image(6).png",
     "profile_text": "I'm an adventurous and creative person who loves to explore new cultures and create art. I'm also very interested in astrology and often spend my time reading about stars and planets. I'm looking for a person who can be my travel companion and share my passion for exploring and learning new things."
   },
-
-    {
-      "id": 17,
-      "name": "Joseph",
-      "last_name": "Christensen",
-      "age": 30,
-      "gender": "Female",
-      "looking_for": "Both",
-      "location": "Aarhus",
-      "hometown": "Copenhagen",
-      "education_level": "Doctorate",
-      "occupation": "Research scientist",
-      "zodiac_sign": "Aquarius",
-      "alcohol_habits": "Non-drinker",
-      "smoking_habits": "Non-smoker",
-      "interests": ["Photography", "Literature", "Traveling", "Cooking", "Yoga", "Arts and crafts"],
-      "children": "2",
-      "image": "/images/profile-photos/user-image(16).png",
-      "profile_text": "I'm a thoughtful and curious person with a passion for exploring and learning new things. I enjoy taking pictures and writing, and when I need to relax, you can often find me on my yoga mat or in the kitchen. I'm looking for a person who can take me on new adventures and share my love for art and culture."
-    },
-
-    {
-      "id": 18,
-      "name": "Jonas",
-      "last_name": "Andreasen",
-      "age": 29,
-      "gender": "Male",
-      "looking_for": "Women",
-      "location": "Aalborg",
-      "hometown": "Hjørring",
-      "education_level": "Bachelor's degree",
-      "occupation": "Art teacher",
-      "zodiac_sign": "Leo",
-      "alcohol_habits": "Typically every evening",
-      "smoking_habits": "Social smoker",
-      "interests": ["Photography", "Traveling", "Yoga", "Arts and crafts", "Animals", "Astrology"],
-      "children": "none",
-      "image": "/images/profile-photos/user-image(18).png",
-      "profile_text": "I'm an adventurous and creative person who loves to explore new cultures and create art. I'm also very interested in astrology and often spend my time reading about stars and planets. I'm looking for a person who can be my travel companion and share my passion for exploring and learning new things."
-    },
-
-    
+  {
+    "id": 17,
+    "name": "Joseph",
+    "last_name": "Christensen",
+    "age": 30,
+    "gender": "Female",
+    "looking_for": "Both",
+    "location": "Aarhus",
+    "hometown": "Copenhagen",
+    "education_level": "Doctorate",
+    "occupation": "Research scientist",
+    "zodiac_sign": "Aquarius",
+    "alcohol_habits": "Non-drinker",
+    "smoking_habits": "Non-smoker",
+    "interests": ["Photography", "Literature", "Traveling", "Cooking", "Yoga", "Arts and crafts"],
+    "children": "2",
+    "image": "/images/profile-photos/user-image(16).png",
+    "profile_text": "I'm a thoughtful and curious person with a passion for exploring and learning new things. I enjoy taking pictures and writing, and when I need to relax, you can often find me on my yoga mat or in the kitchen. I'm looking for a person who can take me on new adventures and share my love for art and culture."
+  },
+  {
+    "id": 18,
+    "name": "Jonas",
+    "last_name": "Andreasen",
+    "age": 29,
+    "gender": "Male",
+    "looking_for": "Women",
+    "location": "Aalborg",
+    "hometown": "Hjørring",
+    "education_level": "Bachelor's degree",
+    "occupation": "Art teacher",
+    "zodiac_sign": "Leo",
+    "alcohol_habits": "Typically every evening",
+    "smoking_habits": "Social smoker",
+    "interests": ["Photography", "Traveling", "Yoga", "Arts and crafts", "Animals", "Astrology"],
+    "children": "none",
+    "image": "/images/profile-photos/user-image(18).png",
+    "profile_text": "I'm an adventurous and creative person who loves to explore new cultures and create art. I'm also very interested in astrology and often spend my time reading about stars and planets. I'm looking for a person who can be my travel companion and share my passion for exploring and learning new things."
+  },
   {
     "id": 19,
     "name": "Emily",
-    "last_name": "Nielsen",
-    "age": 25,
+    "last_name": "Jensen",
+    "age": 27,
     "gender": "Female",
     "looking_for": "Men",
     "location": "Copenhagen",
     "hometown": "Aarhus",
-    "education_level": "Bachelor's degree",
-    "occupation": "Graphic designer",
-    "zodiac_sign": "Leo",
-    "alcohol_habits": "Only for special occasions",
-    "smoking_habits": "Social smoker",
-    "interests": ["Photography", "Traveling", "Fitness and training", "Yoga", "Music", "Arts and crafts"],
+    "education_level": "Master's degree",
+    "occupation": "Software engineer",
+    "zodiac_sign": "Virgo",
+    "alcohol_habits": "Social drinker",
+    "smoking_habits": "Non-smoker",
+    "interests": ["Photography", "Traveling", "Yoga", "Cooking", "Music", "Technology"],
     "children": "1",
-    "image": "/images/profile-photos/user-image(1).png",
-    "profile_text": "I love to travel and explore the world, and when I'm home in Denmark, you can often find me in the gym or at concerts. I'm looking for a partner who's open to adventures and, at the same time, has a handle on their career and education."
+    "image": "/images/profile-photos/user-image(20).png",
+    "profile_text": "I'm a software engineer with a passion for photography, travel, and technology. I'm looking for a man who shares my interests and can join me on exciting adventures."
   },
-
-    {
-      "id": 20,
-      "name": "Frederik",
-      "last_name": "Jensen",
-      "age": 30,
-      "gender": "Male",
-      "looking_for": "Women",
-      "location": "Aarhus",
-      "hometown": "Silkeborg",
-      "education_level": "Associate degree",
-      "occupation": "Social media manager",
-      "zodiac_sign": "Aquarius",
-      "alcohol_habits": "Typically every evening",
-      "smoking_habits": "Smoker",
-      "interests": ["Yoga", "Traveling", "Cooking"],
-      "children": "3 or more",
-      "image": "/images/profile-photos/user-image(20).png",
-      "profile_text": "I'm a curious and open-minded person who likes to explore new places and cultures. I also enjoy cooking and preparing healthy meals, and like to stay in shape by practicing yoga. I'm looking for a woman who can share my thirst for adventure and passion for health and well-being."
-    }]
-  
-  
+  {
+    "id": 20,
+    "name": "Frederik",
+    "last_name": "Jensen",
+    "age": 30,
+    "gender": "Male",
+    "looking_for": "Women",
+    "location": "Aarhus",
+    "hometown": "Silkeborg",
+    "education_level": "Associate degree",
+    "occupation": "Social media manager",
+    "zodiac_sign": "Aquarius",
+    "alcohol_habits": "Typically every evening",
+    "smoking_habits": "Smoker",
+    "interests": ["Yoga", "Traveling", "Cooking"],
+    "children": "3 or more",
+    "image": "/images/profile-photos/user-image(20).png",
+    "profile_text": "I'm a curious and open-minded person who likes to explore new places and cultures. I also enjoy cooking and preparing healthy meals, and like to stay in shape by practicing yoga. I'm looking for a woman who can share my thirst for adventure and passion for health and well-being."
+}
+];
 export default profiles

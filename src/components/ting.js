@@ -242,7 +242,7 @@ button:hover {
   flex-direction: column;
 }
 
-.profile-form-form-fields label {
+.profile-form-fields label {
   min-width: 150px;
 }
 
@@ -297,7 +297,7 @@ input[type='file'] {
 }
 
 
-.profile-form-form-fields {
+.profile-form-fields {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -306,12 +306,12 @@ input[type='file'] {
   margin:0 auto;
 }
 
-.profile-form-form-fields div:not(:first-child) {
+.profile-form-fields div:not(:first-child) {
   display: flex;
   align-items: center;
 }
 
-.profile-form-form-fields div input {
+.profile-form-fields div input {
   padding: 0.5em;
 }
 
