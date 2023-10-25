@@ -23,6 +23,8 @@ function App() {
         <Route path="/matchProfiles/:id" element={<MatchProfile />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
+
       </Routes>
       <Footer />
     </Router>

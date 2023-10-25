@@ -5,9 +5,7 @@ import ProfileForm from '../components/ProfileForm';
 function ProfileCreationForm() {
   const navigate = useNavigate();
 
-  // State variables for form data
   const [selectedLookingFor, setSelectedLookingFor] = useState('');
-
   const [selectedChildren, setSelectedChildren] = useState('');
   const [selectedZodiac, setSelectedZodiac] = useState('');
   const [selectedAlcohol, setSelectedAlcohol] = useState('');
@@ -24,37 +22,46 @@ function ProfileCreationForm() {
   const [birthdate, setBirthdate] = useState('');
   const [occupation, setOccupation] = useState('');
   const [description, setDescription] = useState('');
-
-
-
-
-  // State variable for form errors
   const [errors, setErrors] = useState({});
 
-  // Default form data from local storage
   const formData = JSON.parse(localStorage.getItem('UserInfo')) || {};
-
+  
   useEffect(() => {
-    // Check local storage for form data and update state variables
-    setSelectedChildren(formData.selectedChildren || '');
-    setSelectedLookingFor(formData.selectedLookingFor|| '');
-    setSelectedZodiac(formData.selectedZodiac || '');
-    setSelectedAlcohol(formData.selectedAlcohol || '');
-    setSelectedSmoking(formData.selectedSmoking || '');
-    setSelectedEducation(formData.selectedEducation || '');
-    setFirstName(formData.firstName || '');
-    setLastName(formData.lastName || '');
-    setEmail(formData.email || '');
-    setBirthdate(formData.birthdate || '');
-
-    setDescription(formData.description || ''); 
-
-
-    setPhone(formData.phone || '');
-    setPostcode(formData.postcode || '');
-    setCity(formData.city || '');
-    setProfilePhoto(formData.profilePhoto || null);
-    setSelectedInterests(formData.selectedInterests || []);
+    const {
+      selectedChildren = '',
+      selectedLookingFor = '',
+      selectedZodiac = '',
+      selectedAlcohol = '',
+      selectedSmoking = '',
+      selectedEducation = '',
+      firstName = '',
+      lastName = '',
+      email = '',
+      birthdate = '',
+      description = '',
+      phone = '',
+      postcode = '',
+      city = '',
+      profilePhoto = null,
+      selectedInterests = [],
+    } = formData;
+  
+    setSelectedChildren(selectedChildren);
+    setSelectedLookingFor(selectedLookingFor);
+    setSelectedZodiac(selectedZodiac);
+    setSelectedAlcohol(selectedAlcohol);
+    setSelectedSmoking(selectedSmoking);
+    setSelectedEducation(selectedEducation);
+    setFirstName(firstName);
+    setLastName(lastName);
+    setEmail(email);
+    setBirthdate(birthdate);
+    setDescription(description);
+    setPhone(phone);
+    setPostcode(postcode);
+    setCity(city);
+    setProfilePhoto(profilePhoto);
+    setSelectedInterests(selectedInterests);
   }, []);
 
   const handleFileUpload = (event) => {
@@ -105,11 +112,9 @@ function ProfileCreationForm() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length === 0) {
-      // Form is valid, perform further actions
+    const errors = validateForm();
+    if (Object.keys(errors).length === 0) {
 
-      // Create an object with all the form data
       const formDataToStore = {
         selectedChildren,
         selectedZodiac,
@@ -139,7 +144,7 @@ function ProfileCreationForm() {
       navigate('/about');
     } else {
       // There are validation errors, update the state with error messages
-      setErrors(validationErrors);
+      setErrors(errors);
     }
   };
 

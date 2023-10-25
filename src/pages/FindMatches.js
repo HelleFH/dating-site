@@ -20,13 +20,19 @@ function FindMatches() {
 
   // Function to add a profile to favorites
   const handleFavoriteClick = (profileToFavorite) => {
-    if (!favoritedProfiles.some((profile) => profile.name === profileToFavorite.name)) {
-      setFavoritedProfiles([...favoritedProfiles, profileToFavorite]);
+    if (favoritedProfiles.some((profile) => profile.name === profileToFavorite.name)) {
       setShowFavoriteMessage(true);
-
+  
       setTimeout(() => {
         setShowFavoriteMessage(false);
-      }, 2000);
+      }, 1000);
+    } else {
+      setFavoritedProfiles([...favoritedProfiles, profileToFavorite]);
+      setShowFavoriteMessage(true);
+  
+      setTimeout(() => {
+        setShowFavoriteMessage(false);
+      }, 1000);
     }
   };
 
@@ -67,7 +73,7 @@ function FindMatches() {
 
     setTimeout(() => {
       setShowSwipedMessage(false);
-    }, 2000);
+    }, 1000);
   };
 
   // Function called when a card goes out of the card container
@@ -118,6 +124,7 @@ function FindMatches() {
                 <h3>
                   {character.name}, {character.age}
                 </h3>
+                
                 <h3>
                   {character.occupation}, {character.location}
                 </h3>

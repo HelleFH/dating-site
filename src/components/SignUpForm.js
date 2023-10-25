@@ -11,39 +11,39 @@ function SignUpForm() {
   const navigate = useNavigate();
 
   const validateForm = () => {
-    const validationErrors = {};
+    const errors = {};
 
     if (!firstName) {
-      validationErrors.firstName = 'First name is required';
+      errors.firstName = 'Please enter your first name';
     }
 
     if (!lastName) {
-      validationErrors.lastName = 'Last name is required';
+      errors.lastName = 'Please enter your last name';
     }
 
     if (!email) {
-      validationErrors.email = 'Email is required';
+      errors.email = 'Please enter your email';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      validationErrors.email = 'Email is invalid';
+      errors.email = 'Email is invalid';
     }
 
     if (!password) {
-      validationErrors.password = 'Password is required';
+      errors.password = 'Password is required';
     }
 
     if (password !== confirmPassword) {
-      validationErrors.confirmPassword = 'Passwords do not match';
+      errors.confirmPassword = 'Passwords do not match';
     }
 
-    return validationErrors;
+    return errors;
   };
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length === 0) {
-      // Form is valid, save the data to "UserInfo" in local storage
+    const errors = validateForm();
+    if (Object.keys(errors).length === 0) {
+
       const userInfo = JSON.parse(localStorage.getItem('UserInfo')) || {};
       userInfo.firstName = firstName;
       userInfo.lastName = lastName;
@@ -57,7 +57,7 @@ function SignUpForm() {
       navigate('/profile');
     } else {
       // There are validation errors, update the state with error messages
-      setErrors(validationErrors);
+      setErrors(errors);
     }
   };
 
@@ -127,7 +127,7 @@ function SignUpForm() {
           />
     
         </div>
-        <button className="signup-form-submit-button" type="submit" onClick={handleSubmit}>
+        <button className="signup-form-submit-button" type="submit" onClick={handleFormSubmit}>
           Submit
         </button>
       </form>

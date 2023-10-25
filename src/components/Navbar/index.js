@@ -66,7 +66,7 @@ align-items:center;
 height:70px;
 
 width:100%;
-margin:25px 30px 18px 0px;
+margin:25px 0px 0px 0px;
   }
 `;
 
