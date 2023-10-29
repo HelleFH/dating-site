@@ -1,4 +1,5 @@
 /*********************HOME*********************/
+@import 'buttons';
 
 .home-header {
   background-image: url(../images/couple-wedding.png);
@@ -8,12 +9,6 @@
   display: flex;
   flex-direction: column;
 
-}
-
-.home-content {
-  display: flex;
-  flex-direction: column;
-  background-color: #fcf5c7;
 }
 
 .home-logo {
@@ -43,11 +38,6 @@
   padding-bottom: 1.5em;
 }
 
-.home-text h2 {
-  border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
-}
-
 .home-logo {
   place-self: center;
 }
@@ -73,15 +63,7 @@
   border-radius: 3px;
 }
 
-.home-button {
-  align-self: center;
-  max-width: 250px;
-  z-index: 9999;
-  grid-row: 4;
-  place-self: center;
-  margin-bottom: 2em;
 
-}
 
 @media (min-width: 767px) {
   .home-logo {

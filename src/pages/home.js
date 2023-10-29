@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Home = () => {
     return (
-        <div>
 
             <div className='home-content'>
 
@@ -16,10 +15,7 @@ const Home = () => {
                             not just your evening! <br></br><br></br> Join us today and let's write your 'happily ever after' story together!" 💑💍💖
 
                         </p>
-                        <div className='home-button'>
-                            <button>    <Link to="/sign-up" className="signup-button">Sign up now!</Link></button>                 </div>
-
-                    </div>
+                            <button className='home-button'>    <Link to="/sign-up" className="signup-button">Sign up now!</Link></button>                 </div>
             </div>
             
             <div className='home-profile-photos'>
@@ -34,7 +30,6 @@ const Home = () => {
 
                 <div><img src="../images/profile-photos/user-image(18).png" /></div>
             </div>
-        </div>
         </div>
     );
 };

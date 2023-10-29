@@ -113,22 +113,9 @@ function FindMatches() {
   return (
 
 
-    <div className="find-matches-container">
-      <h2>Swipe left or right or add to your favorites!</h2>
-      {showFavoriteMessage && (
-        <h3 className="infoText"></h3>
-      )}
-      {showFavoriteMessage && (
-        <h3 className="infoText">{showFavoriteMessage}</h3>
-      )}
+    <div className="find-matches-content">
 
-      {showSwipedMessage ? (
-        <h3 className="infoText">You swiped {lastDirection}</h3>
-      ) : (
-        <h3 className="infoText"></h3>
-      )}
-
-      {isModalOpen && (
+{isModalOpen && (
         <Modal closeModal={() => setIsModalOpen(false)}>
           <div className='modal-content'>
             <div key={selectedProfile.id} className="profile">
@@ -180,7 +167,7 @@ function FindMatches() {
                 </div>
               </div>
               <div className='modal-buttons'>
-              </div>
+             
                 <button className="back-button" onClick={closeModal}>
                   Back
                 </button>
@@ -191,13 +178,28 @@ function FindMatches() {
                     View Profile
                   </Link>
                 </button>
-
+                </div>
               </div>
             </div>
         </Modal>
       )}
+      <h2>Swipe left or right or add to your favorites!</h2>
+      {showFavoriteMessage && (
+        <h3 className="infoText"></h3>
+      )}
+      {showFavoriteMessage && (
+        <h3 className="infoText">{showFavoriteMessage}</h3>
+      )}
 
-      <div className="cardContainer">
+      {showSwipedMessage ? (
+        <h3 className="infoText">You swiped {lastDirection}</h3>
+      ) : (
+        <h3 className="infoText"></h3>
+      )}
+
+      
+
+      <div className="card-container">
         {profiles.map((character, index) => (
 
           <TinderCard
@@ -209,14 +211,14 @@ function FindMatches() {
           >
             <div className="card">
               <div className='card-image-container '> <img src={character.image} draggable="false" alt={`${character.name}'s profile`} />
-                <div className="card-i">
-                  <h3>
+                <div className="card-information">
+                  <p>
                     {character.name}, {character.age}
-                  </h3>
+                  </p>
 
-                  <h3>
+                  <p>
                     {character.occupation}, {character.location}
-                  </h3>
+                  </p>
                   <div className="info-button">
 
                     <a href="#" onClick={() => openModal(character)}>

@@ -139,7 +139,7 @@ function ProfileCreationForm() {
 
       localStorage.setItem('UserInfo', JSON.stringify(formDataToStore));
 
-      navigate('/about');
+      navigate('/viewMyProfile');
     } else {
       setErrors(errors);
     }

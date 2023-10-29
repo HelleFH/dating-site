@@ -154,7 +154,7 @@ const Navbar = () => {
             </NavLink>
           </NavLi>
           <NavLi>
-            <NavLink to="/about" onClick={closeMenu} activeStyle={{ color: "red" }}>
+            <NavLink to="/viewMyProfile" onClick={closeMenu} activeStyle={{ color: "red" }}>
               Profile
             </NavLink>
           </NavLi>

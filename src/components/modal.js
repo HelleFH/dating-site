@@ -5,7 +5,7 @@ const Modal = (props) => {
 
   return (
     <div className="modal-overlay">
-        <div
+        <div className='close-modal-button'
           onClick={closeModal}
           style={{
             color: '#000000',
@@ -14,8 +14,11 @@ const Modal = (props) => {
             border: 0,
             position: 'absolute',
             top: '0',
-            right: '0.5rem',
+            right: '0.5em',
             zIndex: '9999',
+            justifySelf: 'flex-end',
+
+            
           }}
         >
           <p style={{fontWeight:'bolder',}}> &#x2715;</p > 

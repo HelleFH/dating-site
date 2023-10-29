@@ -1,211 +1,186 @@
+@import 'buttons';
 
-.view-profile .buttons button {
-    padding: 0.3em;
-    max-width: 300px;
-    font-size: 0.9em;
-    white-space: nowrap;
-    border: 1px solid !important;
-    border-radius: 2px;
-    background-color: #efefef;
-    font-weight: 400;
-  }
-  
-  .view-profile .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 2em;
-    padding: 1em;
-  }
+
+.myProfile .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 2em;
+  padding: 1em;
+}
 
 /****************************VIEW PROFILE**************************/
-.view-profile {
-    display: flex;
-    flex-direction: column;
-    background:rgb(252, 245, 199, 0.5); }
-  
-  .view-profile h1 {
-    padding: 0.2em;
+.myProfile {
+  display: flex;
+  flex-direction: column;
+  background: rgb(252, 245, 199, 0.5);
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.myProfile h1 {
+  padding: 0.2em;
+}
+
+.profile-photo {
+  max-width: 150px;
+}
+
+.create-profile-photo {
+  border-radius: 50%;
+}
+
+.profile-photo img {
+  border-radius: 3px;
+}
+
+.myProfile-personal-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  background-color: white;
+  padding: 1em 0em 1em 1em;
+  font-weight: bold;
+  gap: 1em;
+}
+
+.myProfile-contact-info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 0.5em;
+}
+
+.myProfile-contact-info p {
+  align-items: center;
+}
+
+.myProfile-interests {
+  list-style: none;
+}
+
+.myProfile .myProfile-contact-info p {
+  display: flex;
+  gap: 1em;
+}
+
+.myProfile-user-info {
+  background-color: white;
+  margin-top: 2em;
+  padding: 1em 1em 2em 1em;
+}
+
+.myProfile-user-info span:first-child {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.selected-view-profile-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+  margin: 1.5em 0 1.5em 0;
+}
+
+.myProfile-user-info p {
+  max-width: 400px;
+  border-bottom: solid 0.01em rgb(255, 255, 255, 0.6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 0.5em;
+
+}
+
+.myProfile-profile-text {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top:0.5em;
+}
+
+.myProfile-personal-details h2 {
+  grid-column: 0.9em;
+}
+
+.myProfile-interests {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0;
+  margin-top: 1em;
+}
+
+.myProfile-interests li {
+  border: solid 1px;
+  padding: 0.3em;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.myProfile .myProfile-user-info p>span:nth-child(2),
+.myProfile .myProfile-contact-info p>span:nth-child(2) {
+  grid-column: 2;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-height: 200px;
+  word-break: break-all;
+}
+
+.profile-form-interest-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  gap: 0.3em;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+
+}
+
+.profile-form-interest-buttons .selected {
+  border: solid 1.5px;
+  font-weight: bold;
+  padding: 0.4em 0.3em 0.4em 0.3em;
+}
+
+.profile-form-interest-button {
+  background-color: transparent;
+  box-shadow: none;
+  border: solid 1px;
+  padding: 0.5em;
+  font-weight: normal;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+  overflow: hidden;
+  max-width: 180px;
+  white-space: nowrap;
+  height: 30px;
+
+}
+.profile-form-interest-button:hover {  transform: none;
+}
+
+@media (min-width: 767px) {
+
+  .myProfile {
+    padding-left: 4%;
+    padding-right: 4%;
+    width:50vw;
+    margin:0 auto;
+    margin-bottom:2em;
+    margin-top:2em;
+
   }
-  
-  .profile-photo {
-    max-width: 150px;
-  }
-  
-  .create-profile-photo {
-    border-radius: 50%;
-  }
-  
-  .profile-photo img {
-    border-radius: 3px;
-  }
-  
-  .view-profile-personal-details {
+
+  .myProfile-personal-details {
     display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    background-color: white;
-    padding-bottom: 2em;
-    font-weight: bold;
-    padding-top: 1em;
-    gap: 1em;
+    grid-template-columns: 1fr 2fr;
   }
-  
-  .view-profile-contact-info {
-    display: grid;
-    align-content: center;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0.5em;
+
+  .myProfile-personal-details h2 {
+    grid-column: 1/span 2;
   }
-  
-  .view-profile-user-info {
-    padding-top: 1em;
-  }
-  
-  .view-profile-user-info p {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .view-profile-contact-info p {
-    align-items: center;
-  }
-  
-  .view-profile-interests {
-    list-style: none;
-  }
-  
-  .view-profile .view-profile-contact-info p {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
-  
-  .view-profile-user-info {
-    background-color: white;
-    margin-top: 2em;
-    padding-bottom: 2em;
-  }
-  
-  .view-profile-user-info span:first-child {
-    font-size: 1em;
-    font-weight: bold;
-  }
-  
-  .selected-view-profile-user-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9em;
-    margin: 1.5em 0 1.5em 0;
-  }
-  
-  .view-profile-user-info p {
-    border-bottom: solid 0.01em rgb(255, 255, 255, 0.6);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  
-  }
-  
-  .view-profile-user-info span:first-child {
-    font-size: 1.08em;
-  }
-  
-  .view-profile-personal-details h2 {
-    grid-column: 1;
-  }
-  
-  .view-profile-interests {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.4em;
-    margin: 0;
-    margin-top: 1em;
-  }
-  
-  .view-profile-interests li {
-    border: solid 1px;
-    padding: 0.3em;
-    white-space: nowrap;
-    font-weight: bold;
-  }
-  
-  .view-profile .view-profile-user-info p>span:nth-child(2),
-  .view-profile .view-profile-contact-info p>span:nth-child(2) {
-    grid-column: 2;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-height: 200px;
-    word-break: break-all;
-  }
-  
-.profile-form-submit-button {
-    padding: 0.3em;
-    font-weight: 400;
-    max-width: 300px;
-    font-size: 1em;
-    white-space: nowrap;
-    border: 1px solid !important;
-    border-radius: 0;
-    background-color: #efefef;
-    width: fit-content;
-    padding: 0.2em 1.5em 0.2em 1.5em;
-    margin-bottom: 1em;
-    place-self: flex-end;
-    margin-right: 2em;
-  }
-  
-  .profile-form-interest-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    gap: 0.3em;
-    white-space: nowrap;
-    width: 100%;
-    height: 100%;
-  
-  }
-  
-  .profile-form-interest-buttons .selected {
-    border: solid 1.5px;
-    font-weight: bold;
-    padding: 0.4em 0.3em 0.4em 0.3em;
-    transition: all 0.5s;
-  
-  }
-  
-  .profile-form-interest-button {
-    background-color: transparent;
-    box-shadow: none;
-    border: solid 1px;
-    padding: 0.5em;
-    font-weight: normal;
-    margin-bottom: 1em;
-    font-size: 0.8em;
-    overflow: hidden;
-    max-width: 180px;
-    white-space: nowrap;
-    transition: all 0.5s;
-    height: 30px;
-  
-  }
-  
-  
-  
-  @media (min-width: 767px) {
-    .view-profile {
-      padding-left: 5%;
-      padding-right: 5%;
-    }
-  
-    .view-profile-personal-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  
-    .view-profile-personal-details h2 {
-      grid-column: 1/span 2;
-    }
-  }
-    
+
+}

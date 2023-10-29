@@ -33,19 +33,19 @@ function UserProfile() {
   }, []);
 
   return (
-    <div className='view-profile'>
+    <div className='myProfile'>
       {profileData.firstName && (
         <h1>Welcome, {profileData.firstName}!</h1>
       )}
 
 
-<div className='view-profile-personal-details'>
+<div className='myProfile-personal-details'>
 <h2>Your contact information</h2>
 
 <div className='profile-photo'>  {profileData.profilePhoto && (
           <img src={profileData.profilePhoto} alt="Profile Preview" />
         )}</div>
-      <div className='view-profile-contact-info'>
+      <div className='myProfile-contact-info'>
       {profileData.firstName && (
           <p>
           <span><FaUser />  </span> {profileData.firstName} &nbsp;{profileData.lastName}
@@ -74,12 +74,12 @@ function UserProfile() {
       </div>
       </div>
 
-      <div class="view-profile-user-info">
+      <div class="myProfile-user-info">
         <h2>Additional information</h2>
         {profileData.description && (
-          <p><span>Profile text:</span><span>{profileData.description}</span></p>
+          <p className='myProfile-profile-text'><span>Profile text:</span><span>{profileData.description}</span></p>
         )}
-        <div className='selected-view-profile-user-info'>
+        <div className='selected-myProfile-user-info'>
         {profileData.selectedChildren && (
           <p>
         <span>    <FaBaby /> Children: </span><span>{profileData.selectedChildren}</span>
@@ -121,7 +121,7 @@ function UserProfile() {
        
          <h2>Interests:</h2>
 
-            <ul class="view-profile-interests">
+            <ul class="myProfile-interests">
               {profileData.selectedInterests.map((interest, index) => (
                 <li key={index}>{interest}</li>
               ))}
@@ -130,7 +130,7 @@ function UserProfile() {
         )}
       </div>
       <div className="buttons">
-        <Link to="/profile">
+        <Link to="/myProfile">
           <button>Edit</button>
         </Link>
         <Link to="/findMatches">

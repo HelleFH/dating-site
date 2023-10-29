@@ -1,92 +1,58 @@
+@import 'buttons';
+@import 'userProfileStyle';
+
+
 .modal-content {
-    background-color: white;
-    top: 100px;
-    position: relative;
-    width: 95vw;
-    margin: 0 auto;
-    z-index: 9995;
-    border-radius: 25px;
-  }
-  
+  background-color: white;
+  top: 100px;
+  position: relative;
+  height: fit-content;
+  margin: 0 auto;
+  z-index: 9995;
+}
+
+.modal-content .additional-info {
+  grid-row: 4;
+  grid-column: 1/span 2;
+  margin-top: 1em;
+}
+
+.modal-overlay {
+  position: fixed;
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  cursor: pointer;
+  height: 100vh;
+}
+
+.modal-buttons {
+  place-self: flex-end;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+@media (min-width: 767px) {
   .modal-content .profile {
-    border-radius: 25px;
-    z-index: 9999;
-    position: relative;
-  }
-  
-  .modal-content .profile img {
-    width: 100%;
-    margin: 0 auto;
-    grid-column: 1;
-    grid-row: 1/span 3;
-    padding: 0;
-    border-radius: 25px 25px 0px 0px;
-  
-  }
-  
-  .modal-content .profile-personal-info {
-    display: block;
-  }
-  
-  .modal-overlay {
-    position: absolute;
-    display: block;
-    overflow: auto;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-    cursor: pointer;
-    height: 100vh;
+    max-width: 50vw;
   }
 
-  
-.modal-buttons {
-    place-self: flex-end;
+  .close-modal-button {
+    top: 30px !important;
+    right: 50px;
   }
 
-  .modal-content .profile-interest-list {
-    margin-top: 1em;
-    gap: 0.5em;
+  .modal-content {
+    width: fit-content;
   }
-  
-.modal-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  
-
-.back-button {
-    position: relative;
-    padding: 0.5em;
-    max-width: 100px;
-    font-size: 0.9em;
-    border-radius: 2px;
-    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
-    font-weight: 600;
-    place-self: flex-end;
-    margin-bottom: 1.5em;
-    margin-right: 1em;
-  }
-  
-  
-  @media (min-width: 767px) {
-  
-    .modal-content .profile {
-      width: 30vw;
-    }
-    .modal-content {
-      width: 30vw;
-    }
-  
-    .modal-content .profile-personal-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-    
+}

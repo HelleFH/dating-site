@@ -1,14 +1,12 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSmoking, faChild, faPen, faCoffee, faBeer, faCocktail, faStar, faBaby } from '@fortawesome/free-solid-svg-icons';
-import { Link, useNavigate } from 'react-router-dom';
+import { faSmoking, faCocktail, faStar, faBaby, faGraduationCap, faHome} from '@fortawesome/free-solid-svg-icons';
 
 function MatchProfile() {
   const goBack = () => {
     window.history.back();
   };
 
-  // Retrieve the selected profile from localStorage
   const selectedProfile = JSON.parse(localStorage.getItem('selectedProfile'));
   const addPossessiveS = (name) => {
     if (name.endsWith('s') || name.endsWith("'s")) {
@@ -62,6 +60,12 @@ function MatchProfile() {
               <FontAwesomeIcon icon={faStar} /><p>{selectedProfile.zodiac_sign}</p>
             </div>
             <div>
+  <FontAwesomeIcon icon={faGraduationCap} /><p>{selectedProfile.education_level}</p>
+</div>
+<div>
+  <FontAwesomeIcon icon={faHome} /><p>{selectedProfile.hometown}</p>
+</div>
+            <div>
           <p>{selectedProfile.profile_text}</p>
               </div>
             </div>
@@ -69,7 +73,7 @@ function MatchProfile() {
         
        
       </div>
-      <button onClick={goBack} className="back-to-favorites-button">
+      <button onClick={goBack} className="back-button">
         Back
       </button>
     

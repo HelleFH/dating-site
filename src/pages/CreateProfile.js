@@ -1,7 +1,7 @@
 import React from 'react';
 import ProfileCreationForm from '../components/ProfileCreationForm'; // Adjust the import path as needed
 
-function ProfilePage() {
+function CreateProfile() {
   // You can add any other content or components related to the profile page here
 
   return (
@@ -11,7 +11,7 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;
+export default CreateProfile;
 
 
 
