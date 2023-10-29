@@ -1,20 +1,23 @@
-  import React, { useState, useEffect } from 'react';
-  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-  import { faSmoking, faChild, faPen, faCoffee, faBeer, faCocktail, faStar, faBaby } from '@fortawesome/free-solid-svg-icons'; // Import Font Awesome icons
-  import { Link } from 'react-router-dom';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSmoking, faChild, faPen, faCoffee, faBeer, faCocktail, faStar, faBaby } from '@fortawesome/free-solid-svg-icons';
+import { Link, useNavigate } from 'react-router-dom';
 
-  function MatchProfile() {
-    // Retrieve the selected profile from localStorage
-    const selectedProfile = JSON.parse(localStorage.getItem('selectedProfile'));
-    const addPossessiveS = (name) => {
-      // Check if the name already ends with 's' or an apostrophe
-      if (name.endsWith('s') || name.endsWith("'s")) {
-        return `${name}'`;
-      } else {
-        return `${name}'s`;
-      }
-    };
-    // Your rendering logic here to display the selectedProfile
+function MatchProfile() {
+  const goBack = () => {
+    window.history.back();
+  };
+
+  // Retrieve the selected profile from localStorage
+  const selectedProfile = JSON.parse(localStorage.getItem('selectedProfile'));
+  const addPossessiveS = (name) => {
+    if (name.endsWith('s') || name.endsWith("'s")) {
+      return `${name}'`;
+    } else {
+      return `${name}'s`;
+    }
+  };
+  
     return (
       <div className='favorite-profile-container'>
         <h2>
@@ -32,8 +35,9 @@
           <h4>
             {selectedProfile.occupation} - {selectedProfile.location}
           </h4>
-          <div className="profile-interest-list-container">
           <h4>Interests:</h4>
+          <div className="profile-interest-list-container">
+   
 
           <ul className="profile-interest-list">
               {selectedProfile.interests.map((interest, index) => (
@@ -58,15 +62,16 @@
               <FontAwesomeIcon icon={faStar} /><p>{selectedProfile.zodiac_sign}</p>
             </div>
             <div>
-            <FontAwesomeIcon icon={faPen} /><p>{selectedProfile.profile_text}</p>
+          <p>{selectedProfile.profile_text}</p>
               </div>
             </div>
 
         
        
       </div>
-      <button className="back-to-favorites-button"> <Link to="/favorites">
-   Back to Favorites  </Link></button>
+      <button onClick={goBack} className="back-to-favorites-button">
+        Back
+      </button>
     
       </div>
     );

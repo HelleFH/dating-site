@@ -1,0 +1,38 @@
+
+footer {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    z-index: 999;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+  }
+  
+  footer .container {
+    padding: 1em;
+    min-height: 50px;
+    background-color: #ffc09f;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 600;
+    position: relative;
+    width:100%;
+    bottom:0;
+  }
+  
+  footer img {
+    max-width: 100px;
+    background-color: rgb(255, 255, 255, 0.7);
+    padding: 0.7em;
+    border-radius: 10px;
+    place-self: center;
+  }
+  

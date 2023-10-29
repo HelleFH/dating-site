@@ -1,8 +1,10 @@
 import React from 'react';
-import './App.css';
+import './css/App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/index';
+import Home from './pages/home';
+import Index from './pages/home';
+
 import About from './pages/about';
 import ProfilePage from './pages/profile';
 import SignUp from './pages/signup';
@@ -23,7 +25,7 @@ function App() {
         <Route path="/matchProfiles/:id" element={<MatchProfile />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Index />} />
 
       </Routes>
       <Footer />

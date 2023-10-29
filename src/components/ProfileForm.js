@@ -329,7 +329,7 @@ function ProfileForm({
               }`}
               onClick={() => handleInterestClick(interest)}
             >
-              {interest}
+            <p>  {interest}</p>
             </button>
           ))}
         </div>

@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import home from '../pages/home';
+import SignUp from '../pages/signup';
 
 const Home = () => {
     return (
@@ -41,6 +43,7 @@ const Home = () => {
 
                     <div><img src="../images/profile-photos/user-image(18).png" /></div>
                     <div><img src="../images/profile-photos/user-image(11).png" /></div>
+                    
                 </div>
 
             </div>
@@ -50,3 +53,4 @@ const Home = () => {
 };
 
 export default Home;
+

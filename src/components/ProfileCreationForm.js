@@ -137,13 +137,10 @@ function ProfileCreationForm() {
 
       };
 
-      // Save the entire formData object to localStorage under "UserInfo"
       localStorage.setItem('UserInfo', JSON.stringify(formDataToStore));
 
-      // Navigate to the "/about" page
       navigate('/about');
     } else {
-      // There are validation errors, update the state with error messages
       setErrors(errors);
     }
   };

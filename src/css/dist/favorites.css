@@ -1,0 +1,163 @@
+/*******************************FAVORITES*****************************/
+.favorites-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.5em;
+  background-color: #fcf5c7;
+  width: 95vw;
+  background-color: rgba(160, 206, 217, 0.2);
+}
+
+.profile-personal-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 24px 24px auto;
+}
+
+.profile-personal-info h4:first-child {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.profile-personal-info h4 {
+  margin-bottom: 0.5em;
+}
+
+.profile-personal-info h4 {
+  font-size: 0.8em;
+  padding: 0;
+}
+
+.profile-personal-info h4:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.profile-interest-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0;
+}
+
+.profile-interest-list li {
+  background-color: white;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 0.3em;
+  height: 25px;
+  width: fit-content;
+}
+
+.profile img {
+  width: 150px;
+  grid-column: 1;
+  grid-row: 1/span 3;
+  padding-right: 1em;
+}
+
+.profile-interest-list-container {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.favorites-list-filters option {
+  font-size: 0.8em;
+}
+
+.favorites-list select {
+  width: 100px;
+  margin-right: 0.2em;
+}
+
+.favorites-list-filters {
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 2em;
+}
+
+.favorites-list-filters div {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.additional-info div {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+.profile-personal-info div {
+  display: flex;
+  flex-direction: column;
+}
+
+.additional-info p {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7em;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media (min-width: 767px) {
+  .profile {
+    max-width: 30vw;
+  }
+
+  .profile-container {
+    justify-content: flex-start;
+    padding-left: 3em;
+  }
+
+  .favorites-list {
+    display: flex;
+  }
+
+  .favorites-list-filters option {
+    font-size: 1em;
+  }
+
+  .favorites-list-filters {
+    max-width: 400px;
+  }
+}
