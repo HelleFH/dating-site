@@ -1,0 +1,53 @@
+@import 'buttons';
+@import 'userProfileStyle';
+
+
+.modal-content {
+  background-color: white;
+  top: 70px;
+  position: relative;
+  margin: 0 auto;
+  z-index: 9995;
+  height:fit-content;
+}
+
+.modal-overlay {
+  position: fixed;
+  display: block; 
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0; 
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  cursor: pointer;
+  height: 100%; 
+  overflow:auto; 
+}
+
+.modal-buttons {
+  place-self: flex-end;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+@media (min-width: 767px) {
+  .modal-content .profile {
+    width: 50vw;
+  }
+  .modal-content .profile {max-width: 500px;}
+  
+  .close-modal-button {
+    top: 30px !important;
+    right: 50px;
+  }
+
+  .modal-content {
+    width: fit-content;
+  }
+}

@@ -1,0 +1,361 @@
+/*******************************FAVORITES*****************************/
+button:hover {
+  transform: scale(1.05);
+}
+
+.home-button {
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+  font-size: 1em;
+  background-color: #ffc800;
+  transition: 200ms;
+  font-weight: bolder;
+  white-space: nowrap;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  place-self: center;
+}
+
+.signup-form-submit-button {
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+  font-size: 1em;
+  background-color: #ffc800;
+  transition: 200ms;
+  font-weight: bolder;
+  white-space: nowrap;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  place-self: center;
+  margin-top: 3em;
+}
+
+.myProfile .buttons button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+}
+
+.profile-form-submit-button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+  margin-bottom: 1em;
+}
+
+.back-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+  margin-top: 1em;
+}
+
+.view-profile-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+
+.find-matches-content .view-profile-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+
+@media (min-width: 767px) {
+  .home-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
+  .myProfile .buttons button {
+    width: fit-content;
+    flex-shrink: 0;
+    border: 1px solid !important;
+    border-radius: 2px;
+    background-color: #efefef;
+    padding: 0.4em;
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 400;
+    place-self: flex-end;
+  }
+
+  .signup-form-submit-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
+  .back-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .view-profile-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .find-matches-content .view-profile-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .profile-form-submit-button {
+    width: fit-content;
+    flex-shrink: 0;
+    border: 1px solid !important;
+    border-radius: 2px;
+    background-color: #efefef;
+    padding: 0.4em;
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 400;
+    place-self: flex-end;
+    margin-bottom: 1em;
+  }
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: 1px solid #e0e0e0;
+  background-color: #fcf5c7;
+  width: 100vw;
+  background-color: rgba(160, 206, 217, 0.2);
+  padding-bottom: 0.5em;
+}
+
+.profile-personal-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-personal-info h4 {
+  font-size: 0.8em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.profile-interest-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0;
+}
+
+.profile-interest-list li {
+  background-color: white;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 0.3em;
+  height: 25px;
+  width: fit-content;
+}
+
+.profile-interest-list-container {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.additional-info div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3em;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5em;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.additional-info p {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7em;
+}
+
+.profile-personal-info div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 767px) {
+  .profile {
+    max-width: 40vw;
+    padding: 0.5em;
+  }
+}
+.favorites-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
+  margin-top: 2em;
+}
+
+.favorites-list-filters option {
+  font-size: 0.8em;
+}
+
+.favorites-list select {
+  width: 100px;
+  margin-right: 0.2em;
+}
+
+.favorites-list-filters {
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 2em;
+}
+
+.favorites-list-filters div {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media (min-width: 767px) {
+  .profile-container .profile {
+    max-width: 20vw;
+    min-width: 250px;
+  }
+
+  .profile-container {
+    justify-content: flex-start;
+    padding-left: 3em;
+  }
+
+  .favorites-list {
+    display: flex;
+  }
+
+  .favorites-list-filters option {
+    font-size: 1em;
+  }
+
+  .favorites-list-filters {
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,79 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 1px solid #e0e0e0;
+    background-color: #fcf5c7;
+    width: 100vw;
+    background-color: rgb(160, 206, 217, 0.2);
+    padding-bottom: 0.5em;
+}
+
+.profile-personal-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-personal-info h4 {
+    font-size: 0.8em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.profile-interest-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    padding: 0;
+}
+
+
+.profile-interest-list li {
+    background-color: white;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 0.3em;
+    height: 25px;
+    width: fit-content;
+}
+
+.profile-interest-list-container {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.additional-info {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+.additional-info div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3em;
+    background-color: rgb(255, 255, 255, 0.9);
+    padding: 0.5em;
+    border-radius: 3px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.additional-info p {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7em;
+}
+.profile-personal-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (min-width: 767px) {
+    .profile {
+        max-width: 40vw;
+        padding: 0.5em;
+    }
+
+}

@@ -228,23 +228,26 @@ function ProfileForm({
       </div>
 
       <div>
-        <label htmlFor="education">Education level:</label>
-        <select
-          id="education"
-          name="selectedEducation"
-          value={selectedEducation}
-          onChange={handleEducationChange}
-        >
-          <option value="">Please select</option>
-          <option value="none">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3 or more">3 or more</option>
-        </select>
-        {errors.selectedEducation && (
-          <div className="error">{errors.selectedEducation}</div>
-        )}
-      </div>
+  <label htmlFor="education">Education level:</label>
+  <select
+    id="education"
+    name="selectedEducation"
+    value={selectedEducation}
+    onChange={handleEducationChange}
+  >
+    <option value="">Please select</option>
+    <option value="none">No Education</option>
+    <option value="high_school">High School</option>
+    <option value="associate_degree">Associate's Degree</option>
+    <option value="bachelor_degree">Bachelor's Degree</option>
+    <option value="master_degree">Master's Degree</option>
+    <option value="doctorate">Doctorate</option>
+  </select>
+  {errors.selectedEducation && (
+    <div className="error">{errors.selectedEducation}</div>
+  )}
+</div>
+
 
 
       <div>
@@ -329,7 +332,7 @@ function ProfileForm({
               }`}
               onClick={() => handleInterestClick(interest)}
             >
-              {interest}
+            <p>  {interest}</p>
             </button>
           ))}
         </div>

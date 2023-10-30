@@ -62,10 +62,7 @@ function SignUpForm() {
   };
 
   return (
-      <form class="signup-form">
-
-
-
+      <form className="signup-form">
         <div className="signup-form-name"> 
           <label htmlFor="firstName"><h2>First Name:</h2></label>
           <input
