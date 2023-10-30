@@ -95,6 +95,7 @@ button:hover {
   margin-bottom: 1.5em;
   margin-right: 1em;
   white-space: nowrap;
+  bottom: 0;
 }
 
 .find-matches-content .view-profile-button {
@@ -220,6 +221,7 @@ button:hover {
 .profile {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1em;
   border: 1px solid #e0e0e0;
   background-color: #fcf5c7;
@@ -292,7 +294,7 @@ button:hover {
 
 @media (min-width: 767px) {
   .profile {
-    max-width: 40vw;
+    max-width: 600px;
     padding: 0.5em;
   }
 }
@@ -302,13 +304,16 @@ button:hover {
   max-width: fit-content;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 5vh;
+  margin-bottom: 5em;
 }
 
 .favorite-profile-container h2 {
   padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .favorite-profile-container .profile img {
@@ -323,4 +328,12 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+@media (min-width: 767px) {
+  .favorite-profile-container {
+    top: 10vh;
+    position: relative;
+    margin: 0 auto 5em auto;
+  }
 }/*# sourceMappingURL=favoriteProfile.css.map */

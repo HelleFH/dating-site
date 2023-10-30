@@ -27,7 +27,7 @@ function FavoriteProfile() {
         <img src={selectedProfile.image} alt={`${selectedProfile.name}'s profile`} />
           
           <h3>
-            {selectedProfile.name}, {selectedProfile.age}
+            {selectedProfile.name} {selectedProfile.last_name}, {selectedProfile.age}
           </h3>
           
           <h4>

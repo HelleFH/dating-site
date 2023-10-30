@@ -1,3 +1,7 @@
+button:hover {
+  transform: scale(1.05);
+}
+
 .home-button {
   width: fit-content;
   flex-shrink: 0;
@@ -11,18 +15,6 @@
   white-space: nowrap;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   place-self: center;
-}
-
-.myProfile .buttons button {
-  width: fit-content;
-  flex-shrink: 0;
-  border: 1px solid !important;
-  border-radius: 2px;
-  background-color: #efefef;
-  padding: 0.3em;
-  font-size: 0.9em;
-  white-space: nowrap;
-  font-weight: 400;
 }
 
 .signup-form-submit-button {
@@ -39,6 +31,33 @@
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
   place-self: center;
   margin-top: 3em;
+}
+
+.myProfile .buttons button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+}
+
+.profile-form-submit-button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+  margin-bottom: 1em;
 }
 
 .back-button {
@@ -87,32 +106,33 @@
   white-space: nowrap;
 }
 
-.home-button {
-  width: fit-content;
-  flex-shrink: 0;
-  padding: 1em;
-  border-radius: 20px;
-  border: none;
-  font-size: 1.3em;
-  background-color: #ffc800;
-  transition: 200ms;
-  font-weight: bolder;
-  white-space: nowrap;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-  place-self: center;
-}
-
 @media (min-width: 767px) {
+  .home-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
   .myProfile .buttons button {
     width: fit-content;
     flex-shrink: 0;
     border: 1px solid !important;
     border-radius: 2px;
     background-color: #efefef;
-    padding: 0.3em;
+    padding: 0.4em;
     font-size: 1em;
     white-space: nowrap;
     font-weight: 400;
+    place-self: flex-end;
   }
 
   .signup-form-submit-button {
@@ -174,6 +194,20 @@
     margin-right: 1em;
     white-space: nowrap;
   }
+
+  .profile-form-submit-button {
+    width: fit-content;
+    flex-shrink: 0;
+    border: 1px solid !important;
+    border-radius: 2px;
+    background-color: #efefef;
+    padding: 0.4em;
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 400;
+    place-self: flex-end;
+    margin-bottom: 1em;
+  }
 }
 .profile {
   display: flex;
@@ -183,32 +217,18 @@
   background-color: #fcf5c7;
   width: 100vw;
   background-color: rgba(160, 206, 217, 0.2);
-  border-radius: 15px;
+  padding-bottom: 0.5em;
 }
 
 .profile-personal-info {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 24px 24px auto;
-}
-
-.profile-personal-info h4:first-child {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.profile-personal-info h4 {
-  margin-bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-personal-info h4 {
   font-size: 0.8em;
-  padding: 0;
-}
-
-.profile-personal-info h4:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 .profile-interest-list {
@@ -228,13 +248,6 @@
   width: fit-content;
 }
 
-.profile img {
-  width: 150px;
-  grid-column: 1;
-  grid-row: 1/span 3;
-  padding-right: 1em;
-}
-
 .profile-interest-list-container {
   grid-column: 2;
   grid-row: 3;
@@ -242,22 +255,20 @@
 
 .additional-info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.5em;
+  flex-wrap: wrap;
 }
 
 .additional-info div {
   display: flex;
   flex-direction: row;
-  gap: 1em;
+  gap: 0.3em;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 0.5em;
   border-radius: 3px;
-}
-
-.profile-personal-info div {
-  display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .additional-info p {
@@ -265,9 +276,15 @@
   line-height: 1.7em;
 }
 
+.profile-personal-info div {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 767px) {
   .profile {
-    max-width: 30vw;
+    max-width: 40vw;
+    padding: 0.5em;
   }
 }
 /*****************************FAVORITE PROFILE****************************/
@@ -275,13 +292,16 @@
   max-width: fit-content;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 5vh;
+  margin-bottom: 5em;
 }
 
 .favorite-profile-container h2 {
   padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .favorite-profile-container .profile img {
@@ -296,4 +316,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+@media (min-width: 767px) {
+  .favorite-profile-container {
+    top: 10vh;
+    position: relative;
+    margin: 0 auto 5em auto;
+  }
 }

@@ -130,7 +130,7 @@ function UserProfile() {
         )}
       </div>
       <div className="buttons">
-        <Link to="/myProfile">
+        <Link to="/CreateProfile">
           <button>Edit</button>
         </Link>
         <Link to="/findMatches">

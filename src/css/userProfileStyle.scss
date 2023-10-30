@@ -1,12 +1,14 @@
 .profile {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 1em;
     border: 1px solid #e0e0e0;
     background-color: #fcf5c7;
     width: 100vw;
     background-color: rgb(160, 206, 217, 0.2);
     padding-bottom: 0.5em;
+    
 }
 
 .profile-personal-info {
@@ -72,7 +74,7 @@
 
 @media (min-width: 767px) {
     .profile {
-        max-width: 40vw;
+        max-width: 600px;
         padding: 0.5em;
     }
 

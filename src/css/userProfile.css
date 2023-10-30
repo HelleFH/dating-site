@@ -95,6 +95,7 @@ button:hover {
   margin-bottom: 1.5em;
   margin-right: 1em;
   white-space: nowrap;
+  bottom: 0;
 }
 
 .find-matches-content .view-profile-button {
@@ -383,8 +384,9 @@ button:hover {
     padding-right: 4%;
     width: 50vw;
     margin: 0 auto;
-    margin-bottom: 2em;
-    margin-top: 2em;
+    margin-bottom: 10em;
+    position: relative;
+    top: 10vh;
   }
   .myProfile-personal-details {
     display: grid;

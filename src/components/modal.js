@@ -17,8 +17,6 @@ const Modal = (props) => {
             right: '0.5em',
             zIndex: '9999',
             justifySelf: 'flex-end',
-
-            
           }}
         >
           <p style={{fontWeight:'bolder',}}> &#x2715;</p > 

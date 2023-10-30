@@ -4,8 +4,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    margin-top: 2em;
-    padding: 0 2%;
+    padding: 4em 2%;
   }
   
   .profile-form-fields label {
@@ -67,7 +66,7 @@
   }
   
   .profile-form-fields:not(:first-child) div input {
-    min-width: 50px;
+    min-width: 28vw;
   }
   
   .profile-form-fields div:not(:first-child) {
@@ -87,9 +86,11 @@
   @media (min-width: 767px) {
     .profile-form h2 {
       padding-left: 0em;
+      
     }
     .profile-form {
       width: 50vw;
+      padding-top:5em;
     }
   
     .create-profile-photo {

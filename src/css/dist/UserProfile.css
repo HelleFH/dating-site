@@ -106,22 +106,22 @@ button:hover {
   white-space: nowrap;
 }
 
-.home-button {
-  width: fit-content;
-  flex-shrink: 0;
-  padding: 1em;
-  border-radius: 20px;
-  border: none;
-  font-size: 1.3em;
-  background-color: #ffc800;
-  transition: 200ms;
-  font-weight: bolder;
-  white-space: nowrap;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-  place-self: center;
-}
-
 @media (min-width: 767px) {
+  .home-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
   .myProfile .buttons button {
     width: fit-content;
     flex-shrink: 0;
@@ -375,8 +375,9 @@ button:hover {
     padding-right: 4%;
     width: 50vw;
     margin: 0 auto;
-    margin-bottom: 2em;
-    margin-top: 2em;
+    margin-bottom: 10em;
+    position: relative;
+    top: 10vh;
   }
 
   .myProfile-personal-details {

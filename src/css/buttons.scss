@@ -71,6 +71,7 @@ button:hover {
 
 .view-profile-button {
     @include userProfile-buttons(0.9em);
+    bottom:0;
 }
 
 .find-matches-content .view-profile-button {
