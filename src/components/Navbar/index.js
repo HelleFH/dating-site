@@ -25,16 +25,13 @@ const Bar = styled.nav`
   width: 100%;
   z-index: 9999;
   margin: 0;
-  position: relative;
+  position: fixed;
   font-family: 'Roboto', sans-serif;
-
-
   @media (min-width: 768px) {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0;
     height: 70px;
-    width: 100%;
   }
 `;
 
@@ -45,7 +42,7 @@ const MainNav = styled.ul`
   flex-direction: column;
   position: absolute;
   z-index: 9999;
-  top: 40px;
+  top: 38px;
   width: 100vw;
   transition: transform 0.3s ease;
   transform: translateY(${(props) => (props.display === "flex" ? "none" : "-100%")});

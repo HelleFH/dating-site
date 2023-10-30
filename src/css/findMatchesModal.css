@@ -113,23 +113,22 @@ button:hover {
   white-space: nowrap;
 }
 
-.home-button {
-  width: -moz-fit-content;
-  width: fit-content;
-  flex-shrink: 0;
-  padding: 1em;
-  border-radius: 20px;
-  border: none;
-  font-size: 1.3em;
-  background-color: #ffc800;
-  transition: 200ms;
-  font-weight: bolder;
-  white-space: nowrap;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-  place-self: center;
-}
-
 @media (min-width: 767px) {
+  .home-button {
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
   .myProfile .buttons button {
     width: -moz-fit-content;
     width: fit-content;
@@ -299,32 +298,26 @@ button:hover {
 }
 .modal-content {
   background-color: white;
-  top: 100px;
+  top: 70px;
   position: relative;
-  height: -moz-fit-content;
-  height: fit-content;
   margin: 0 auto;
   z-index: 9995;
-}
-
-.modal-content .additional-info {
-  grid-row: 4;
-  grid-column: 1/span 2;
-  margin-top: 1em;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .modal-overlay {
   position: fixed;
-  display: flex;
-  overflow: auto;
+  display: block;
   width: 100%;
   left: 0;
   right: 0;
-  bottom: 0;
+  top: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   cursor: pointer;
-  height: 100vh;
+  height: 100%;
+  overflow: auto;
 }
 
 .modal-buttons {
@@ -339,7 +332,10 @@ button:hover {
 
 @media (min-width: 767px) {
   .modal-content .profile {
-    max-width: 50vw;
+    width: 50vw;
+  }
+  .modal-content .profile {
+    max-width: 500px;
   }
   .close-modal-button {
     top: 30px !important;

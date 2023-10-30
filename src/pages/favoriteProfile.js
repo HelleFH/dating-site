@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSmoking, faCocktail, faStar, faBaby, faGraduationCap, faHome} from '@fortawesome/free-solid-svg-icons';
 
-function MatchProfile() {
+function FavoriteProfile() {
   const goBack = () => {
     window.history.back();
   };
@@ -81,4 +81,4 @@ function MatchProfile() {
     );
   }
 
-  export default MatchProfile;
+  export default FavoriteProfile;

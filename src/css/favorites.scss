@@ -3,11 +3,10 @@
 @import 'userProfileStyle';
 
 
-.favorites-container {
+.favorites-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -20,7 +19,6 @@
   gap: 1em;
   margin-top: 2em;
 }
-.profile-container .profile {max-width:30vw;}
 
 .favorites-list-filters option {
   font-size: 0.8em;
@@ -55,7 +53,10 @@
 }
 
 @media (min-width: 767px) {
-
+  .profile-container .profile {
+    max-width: 20vw;
+    min-width: 250px;
+  }
   .profile-container {
     justify-content: flex-start;
     padding-left: 3em;

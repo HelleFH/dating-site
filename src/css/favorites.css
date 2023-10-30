@@ -114,23 +114,22 @@ button:hover {
   white-space: nowrap;
 }
 
-.home-button {
-  width: -moz-fit-content;
-  width: fit-content;
-  flex-shrink: 0;
-  padding: 1em;
-  border-radius: 20px;
-  border: none;
-  font-size: 1.3em;
-  background-color: #ffc800;
-  transition: 200ms;
-  font-weight: bolder;
-  white-space: nowrap;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-  place-self: center;
-}
-
 @media (min-width: 767px) {
+  .home-button {
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
   .myProfile .buttons button {
     width: -moz-fit-content;
     width: fit-content;
@@ -298,11 +297,10 @@ button:hover {
     padding: 0.5em;
   }
 }
-.favorites-container {
+.favorites-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -313,10 +311,6 @@ button:hover {
   justify-content: space-evenly;
   gap: 1em;
   margin-top: 2em;
-}
-
-.profile-container .profile {
-  max-width: 30vw;
 }
 
 .favorites-list-filters option {
@@ -352,6 +346,10 @@ button:hover {
 }
 
 @media (min-width: 767px) {
+  .profile-container .profile {
+    max-width: 20vw;
+    min-width: 250px;
+  }
   .profile-container {
     justify-content: flex-start;
     padding-left: 3em;

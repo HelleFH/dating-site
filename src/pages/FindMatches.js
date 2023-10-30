@@ -137,35 +137,13 @@ function FindMatches() {
                 {selectedProfile.profile_text && (
                   <div>
 
-                    <p>{selectedProfile.profile_text.substring(0, 200)}...</p>
+                    <p>{selectedProfile.profile_text.substring(0, 100)}...</p>
                   </div>
                 )}
               </div>
-              <div className="profile-interest-list-container">
-                  <h4>Interests:</h4>
-
-                  <ul className="profile-interest-list">
-                    {selectedProfile.interests.map((interest, index) => (
-                      <li key={index}>{interest}</li>
-                    ))}
-                  </ul>
-                </div>
 
               </div>
-              <div className='additional-info'>
-                <div>
-                  <FontAwesomeIcon icon={faBaby} /><p>{selectedProfile.children}</p>
-                </div>
-                <div>
-                  <FontAwesomeIcon icon={faSmoking} /> <p>{selectedProfile.smoking_habits}</p>
-                </div>
-                <div>
-                  <FontAwesomeIcon icon={faCocktail} /><p> {selectedProfile.alcohol_habits}</p>
-                </div>
-                <div>
-                  <FontAwesomeIcon icon={faStar} /><p>{selectedProfile.zodiac_sign}</p>
-                </div>
-              </div>
+
               <div className='modal-buttons'>
              
                 <button className="back-button" onClick={closeModal}>
@@ -174,7 +152,7 @@ function FindMatches() {
                 
                 <button className="view-profile-button" onClick={() => handleViewProfileClick(selectedProfile)}>
 
-                  <Link to={`/matchProfiles/${selectedProfile.id}`}>
+                  <Link to={`/favoriteProfiles/${selectedProfile.id}`}>
                     View Profile
                   </Link>
                 </button>

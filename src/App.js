@@ -8,7 +8,7 @@ import UserProfile from './pages/viewMyProfile';
 import CreateProfile from './pages/CreateProfile';
 import SignUp from './pages/signup';
 import Favorites from './pages/favorites';
-import MatchProfile from './pages/matchProfile';
+import FavoriteProfile from './pages/favoriteProfile';
 import FindMatches from './pages/FindMatches';
 import Footer from './components/Footer';
 
@@ -21,10 +21,10 @@ function App() {
         <Route path='/findmatches' element={<FindMatches />} />
         <Route path='/CreateProfile' element={<CreateProfile />} />
         <Route path='/favorites' element={<Favorites />} />
-        <Route path="/matchProfiles/:id" element={<MatchProfile />} />
+        <Route path="/favoriteProfiles/:id" element={<FavoriteProfile />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/' element={<Index />} />
+        <Route path='/' element={<Home />} />
 
       </Routes>
       <Footer />

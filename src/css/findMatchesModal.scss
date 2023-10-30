@@ -4,31 +4,25 @@
 
 .modal-content {
   background-color: white;
-  top: 100px;
+  top: 70px;
   position: relative;
-  height: fit-content;
   margin: 0 auto;
   z-index: 9995;
-}
-
-.modal-content .additional-info {
-  grid-row: 4;
-  grid-column: 1/span 2;
-  margin-top: 1em;
+  height:fit-content;
 }
 
 .modal-overlay {
   position: fixed;
-  display: flex;
-  overflow: auto;
+  display: block; 
   width: 100%;
   left: 0;
   right: 0;
-  bottom: 0;
+  top: 0; 
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
   cursor: pointer;
-  height: 100vh;
+  height: 100%; 
+  overflow:auto; 
 }
 
 .modal-buttons {
@@ -44,9 +38,10 @@
 
 @media (min-width: 767px) {
   .modal-content .profile {
-    max-width: 50vw;
+    width: 50vw;
   }
-
+  .modal-content .profile {max-width: 500px;}
+  
   .close-modal-button {
     top: 30px !important;
     right: 50px;

@@ -44,8 +44,8 @@
 
 button:hover {
     transform: scale(1.05);
-  }
-  
+}
+
 .home-button {
     @include signUp-buttons(1em);
 }
@@ -61,7 +61,7 @@ button:hover {
 
 .profile-form-submit-button {
     @include myProfile-buttons(0.9em);
-    margin-bottom:1em;
+    margin-bottom: 1em;
 }
 
 .back-button {
@@ -77,11 +77,11 @@ button:hover {
     @include userProfile-buttons(0.9em);
 }
 
-.home-button {
-    @include signUp-buttons(1.3em);
-}
-
 @media (min-width: 767px) {
+
+    .home-button {
+        @include signUp-buttons(1.3em);
+    }
 
     .myProfile .buttons button {
         @include myProfile-buttons(1em);
@@ -105,6 +105,6 @@ button:hover {
 
     .profile-form-submit-button {
         @include myProfile-buttons(1em);
-        margin-bottom:1em;
+        margin-bottom: 1em;
     }
 }

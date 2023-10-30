@@ -19,7 +19,7 @@ function SignUp() {
 </div>
   
 
-     <div class="signup-page-form"> <SignUpForm />
+     <div class="signup-form-container"> <SignUpForm />
      
      
       </div>{/* Render your SignUpForm component here */}

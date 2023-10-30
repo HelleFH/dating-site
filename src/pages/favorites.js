@@ -68,7 +68,7 @@ function Favorites() {
 
 
   return (
-    <div className="favorites-container">
+    <div className="favorites-content">
       <h1>Your favorites</h1>
 
 
@@ -167,7 +167,7 @@ function Favorites() {
 
               <button className="view-profile-button" onClick={() => handleViewProfileClick(profile)}>
 
-                <Link to={`/matchProfiles/${profile.id}`}>
+                <Link to={`/favoriteProfiles/${profile.id}`}>
                   View Profile
                 </Link>
               </button>

@@ -2136,7 +2136,7 @@ button:hover {
     padding: 0.5em;
   }
 }
-.favorites-container {
+.favorites-content {
   display: flex;
   flex-direction: column;
   align-items: center;
