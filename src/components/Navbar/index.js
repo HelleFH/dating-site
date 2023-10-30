@@ -11,62 +11,59 @@ const Bars = styled(FaBars)`
     display: flex;
     font-size: 1.8rem;
     cursor: pointer;
-    margin-left:0.3em;
+    margin-left:0.2em;
   }
 `;
-
 const Bar = styled.nav`
   font-size: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background:transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   min-height: 40px;
   display: flex;
+  background-color:rgb(252, 245, 199);
   align-items: center;
   width: 100%;
-  z-index:9999;
-  background-color: rgb(103, 213, 181);
-  margin:0;
-  position:relative;
+  z-index: 9999;
+  margin: 0;
+  position: fixed;
   font-family: 'Roboto', sans-serif;
-
   @media (min-width: 768px) {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0;
     height: 70px;
-    width:100%;
-    background-color: rgb(103, 213, 181);
   }
 `;
+
 
 const MainNav = styled.ul`
   list-style-type: none;
   display: ${(props) => (props.display)};
   flex-direction: column;
-  background: rgb(222, 216, 162);
-  background-color: rgb(103, 213, 181);
   position: absolute;
   z-index: 9999;
-  top: 40px;
+  top: 38px;
   width: 100vw;
   transition: transform 0.3s ease;
   transform: translateY(${(props) => (props.display === "flex" ? "none" : "-100%")});
   border-radius: 0 0 5px 5px;
   margin:0;
   padding:0;
+ background-color: rgba(252, 245, 199, 0.99);
 
   @media (min-width: 768px) {
     display: flex !important;
     margin-right: 30px;
     flex-direction: row;
     justify-content: flex-end;
-    background-color: rgb(103, 213, 181,0.99);
+    background-color: transparent;
 
 flex-wrap:wrap;
 align-items:center;
 height:70px;
 
 width:100%;
-margin:25px 0px 0px 0px;
+margin:25px 30px 18px 0px;
   }
 `;
 
@@ -76,9 +73,9 @@ const NavLi = styled.li`
   position: relative;
 
   a {
-    font-weight: 400;
+    font-weight: 600;
   }
-  a:visited {color:black;}
+
   
   @media screen and (max-width: 768px) {
 
@@ -92,6 +89,10 @@ const NavBarToggle = styled.span`
   cursor: pointer;
   color: rgba(255, 255, 255, 0.8);
   font-size: 24px;
+
+  &:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
 `;
 
 const CloseButton = styled(FaTimes)` // Define the close button styling
@@ -134,7 +135,7 @@ const Navbar = () => {
         <MainNav display={open ? "flex" : "none"}>
           <NavLi>
             <NavLink to="/home" onClick={closeMenu} activeStyle={{ color: "red" }}>
-              <img className="menu-logo" src="./images/logo.png" />
+              <img className="menu-logo" src="./images/logo.png" alt="logo" />
             </NavLink>
           </NavLi>
 
@@ -150,7 +151,7 @@ const Navbar = () => {
             </NavLink>
           </NavLi>
           <NavLi>
-            <NavLink to="/about" onClick={closeMenu} activeStyle={{ color: "red" }}>
+            <NavLink to="/viewMyProfile" onClick={closeMenu} activeStyle={{ color: "red" }}>
               Profile
             </NavLink>
           </NavLi>

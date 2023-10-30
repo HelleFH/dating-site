@@ -1,0 +1,360 @@
+button:hover {
+  transform: scale(1.05);
+}
+
+.home-button {
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+  font-size: 1em;
+  background-color: #ffc800;
+  transition: 200ms;
+  font-weight: bolder;
+  white-space: nowrap;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  place-self: center;
+}
+
+.signup-form-submit-button {
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+  font-size: 1em;
+  background-color: #ffc800;
+  transition: 200ms;
+  font-weight: bolder;
+  white-space: nowrap;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  place-self: center;
+  margin-top: 3em;
+}
+
+.myProfile .buttons button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+}
+
+.profile-form-submit-button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+  margin-bottom: 1em;
+}
+
+.back-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+  margin-top: 1em;
+}
+
+.view-profile-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+
+.find-matches-content .view-profile-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+
+@media (min-width: 767px) {
+  .home-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
+  .myProfile .buttons button {
+    width: fit-content;
+    flex-shrink: 0;
+    border: 1px solid !important;
+    border-radius: 2px;
+    background-color: #efefef;
+    padding: 0.4em;
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 400;
+    place-self: flex-end;
+  }
+
+  .signup-form-submit-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
+  .back-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .view-profile-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .find-matches-content .view-profile-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .profile-form-submit-button {
+    width: fit-content;
+    flex-shrink: 0;
+    border: 1px solid !important;
+    border-radius: 2px;
+    background-color: #efefef;
+    padding: 0.4em;
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 400;
+    place-self: flex-end;
+    margin-bottom: 1em;
+  }
+}
+/********************************SIGN UP FORM*************************/
+.signup-page {
+  background: linear-gradient(to bottom, rgba(252, 245, 199, 0.99), white);
+}
+
+.signup-page-logo {
+  max-width: 200px;
+  place-self: center;
+  padding: 1.5em;
+  background: rgba(255, 247, 242, 0.99);
+  border-radius: 30px;
+  margin-top: 5em;
+  margin-bottom: 4.5em;
+}
+
+.signup-page::before {
+  content: "";
+  background-image: url(../images/couple-wedding.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center top;
+  z-index: 1;
+  position: fixed;
+}
+
+.signup-page {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  z-index: 9900;
+}
+
+.signup-form-header-container {
+  padding: 1.3em;
+  font-size: 1.5em;
+}
+
+.signup-form-name {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.signup-form-name label:first-child {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.signup-form-name label:nth-child(2) {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.signup-form-name input:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.signup-form-name input:nth-child(2) {
+  grid-row: 2;
+  grid-column: 1;
+  margin-bottom: 1em;
+}
+
+.signup-page-content {
+  z-index: 9980;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form-header-container {
+  background: rgba(255, 192, 159, 0.8);
+  border-radius: 25px 25px 0 0;
+}
+
+.signup-form-container {
+  width: 100%;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: white;
+  z-index: 9990;
+  padding: 3em;
+  margin-bottom: 2em;
+}
+
+.signup-form label {
+  min-width: 30%;
+  display: flex;
+}
+
+.signup-form div:not(:first-child) {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.signup-form input {
+  min-width: 50%;
+  min-height: 40px !important;
+  font-size: 1.2em;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+@media (min-width: 767px) {
+  .signup-form-name {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 1fr;
+    grid-column-gap: 2em;
+  }
+
+  .signup-page-logo {
+    max-width: 400px;
+    border-radius: 50px;
+    padding: 3em;
+    margin-top: 8em;
+    margin-bottom: 15em;
+  }
+
+  .signup-form-name input:nth-child(2) {
+    grid-row: 2;
+    grid-column: 1;
+    margin-bottom: 0em;
+  }
+
+  .signup-form {
+    border-radius: 0 0 25px 25px;
+  }
+
+  .signup-form div {
+    flex-direction: row;
+  }
+
+  .signup-form input {
+    min-height: 70px;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0.5em;
+  }
+}

@@ -1,0 +1,474 @@
+/***************************************FIND MATCHES /TINDER CARDS ************************/
+button:hover {
+  transform: scale(1.05);
+}
+
+.home-button {
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+  font-size: 1em;
+  background-color: #ffc800;
+  transition: 200ms;
+  font-weight: bolder;
+  white-space: nowrap;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  place-self: center;
+}
+
+.signup-form-submit-button {
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+  font-size: 1em;
+  background-color: #ffc800;
+  transition: 200ms;
+  font-weight: bolder;
+  white-space: nowrap;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  place-self: center;
+  margin-top: 3em;
+}
+
+.myProfile .buttons button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+}
+
+.profile-form-submit-button {
+  width: fit-content;
+  flex-shrink: 0;
+  border: 1px solid !important;
+  border-radius: 2px;
+  background-color: #efefef;
+  padding: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
+  font-weight: 400;
+  place-self: flex-end;
+  margin-bottom: 1em;
+}
+
+.back-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+  margin-top: 1em;
+}
+
+.view-profile-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+
+.find-matches-content .view-profile-button {
+  width: fit-content;
+  position: relative;
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 2px;
+  border: none;
+  background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+  font-weight: 600;
+  place-self: flex-end;
+  margin-bottom: 1.5em;
+  margin-right: 1em;
+  white-space: nowrap;
+}
+
+@media (min-width: 767px) {
+  .home-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
+  .myProfile .buttons button {
+    width: fit-content;
+    flex-shrink: 0;
+    border: 1px solid !important;
+    border-radius: 2px;
+    background-color: #efefef;
+    padding: 0.4em;
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 400;
+    place-self: flex-end;
+  }
+
+  .signup-form-submit-button {
+    width: fit-content;
+    flex-shrink: 0;
+    padding: 1em;
+    border-radius: 20px;
+    border: none;
+    font-size: 1.3em;
+    background-color: #ffc800;
+    transition: 200ms;
+    font-weight: bolder;
+    white-space: nowrap;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    place-self: center;
+  }
+
+  .back-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .view-profile-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .find-matches-content .view-profile-button {
+    width: fit-content;
+    position: relative;
+    padding: 0.4em;
+    font-size: 1em;
+    border-radius: 2px;
+    border: none;
+    background: linear-gradient(to right, #FF6B6B, #FF9A8B);
+    font-weight: 600;
+    place-self: flex-end;
+    margin-bottom: 1.5em;
+    margin-right: 1em;
+    white-space: nowrap;
+  }
+
+  .profile-form-submit-button {
+    width: fit-content;
+    flex-shrink: 0;
+    border: 1px solid !important;
+    border-radius: 2px;
+    background-color: #efefef;
+    padding: 0.4em;
+    font-size: 1em;
+    white-space: nowrap;
+    font-weight: 400;
+    place-self: flex-end;
+    margin-bottom: 1em;
+  }
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: 1px solid #e0e0e0;
+  background-color: #fcf5c7;
+  width: 100vw;
+  background-color: rgba(160, 206, 217, 0.2);
+  padding-bottom: 0.5em;
+}
+
+.profile-personal-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-personal-info h4 {
+  font-size: 0.8em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.profile-interest-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0;
+}
+
+.profile-interest-list li {
+  background-color: white;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 0.3em;
+  height: 25px;
+  width: fit-content;
+}
+
+.profile-interest-list-container {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.additional-info div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3em;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5em;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.additional-info p {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7em;
+}
+
+.profile-personal-info div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 767px) {
+  .profile {
+    max-width: 40vw;
+    padding: 0.5em;
+  }
+}
+.find-matches-content {
+  background: linear-gradient(to bottom, rgba(252, 245, 199, 0.99), white);
+}
+
+.find-matches-content h2 {
+  padding-top: 2em;
+  text-align: center;
+}
+
+.swipe {
+  position: absolute;
+}
+
+.card-container {
+  display: flex;
+  height: 600px;
+  position: relative;
+  justify-content: center;
+  margin-top: 2em;
+  overflow: hidden;
+  align-items: center;
+}
+
+.card-information {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-row: 2;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  grid-column: 1;
+  border-radius: 0px 0px 15px 15px;
+  padding: 0.5em;
+  flex-direction: column;
+}
+
+.card-image-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.card-image-container img {
+  grid-row: 1/span 2;
+  grid-column: 1;
+  width: 100%;
+}
+
+.card-information p {
+  color: white;
+  font-weight: 400;
+  font-family: "Roboto";
+  font-size: 0.8em;
+}
+
+.card-information p:first-child {
+  grid-row: 1;
+  grid-column: 1/span 2;
+}
+
+.card-information p:nth-child(2) {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.info-button svg {
+  color: white;
+}
+
+.info-button {
+  max-width: fit-content;
+  display: flex;
+  place-self: flex-end;
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.card {
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 20px;
+  padding: 0.3em 0.3em 1em 0.3em;
+  z-index: 9998;
+  width: 80vw;
+}
+
+.card img {
+  border-radius: 15px;
+}
+
+.infoText {
+  width: 100%;
+  justify-content: center;
+  animation-name: popup !important;
+  animation-duration: 800ms;
+  position: absolute;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.card-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 0.5em;
+}
+
+.card-buttons a:first-child,
+.card-buttons a:last-child {
+  margin-top: 0.8em;
+  font-size: 2.4em;
+}
+
+.card-buttons a:first-child svg {
+  color: #79addc !important;
+}
+
+.card-buttons a:last-child svg {
+  color: red;
+}
+
+.card-buttons a:nth-child(3) svg {
+  color: #ff9900;
+}
+
+.card-buttons a:nth-child(2) svg {
+  color: #a5d567;
+}
+
+.card-buttons a {
+  font-size: 2em;
+  display: flex;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.1, 1.1);
+  }
+  30% {
+    transform: scale(0.9, 0.9);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  57% {
+    transform: scale(1, 1);
+  }
+  64% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@media (min-width: 767px) {
+  .find-matches-content h2 {
+    padding-top: 5em;
+  }
+
+  .find-matches-content {
+    padding-bottom: 5em;
+  }
+
+  .card {
+    max-width: 350px;
+  }
+
+  .card-container {
+    margin-top: 0em;
+  }
+
+  .card-information p {
+    font-size: 1em;
+  }
+}
